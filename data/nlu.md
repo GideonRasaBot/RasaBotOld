@@ -1,0 +1,672 @@
+## intent:greet
+- Hi
+- Hey
+- Hi bot
+- Hey bot
+- Hello
+- Good morning
+- hi again
+- hi folks
+- hi Mister
+- hi pal!
+- hi there
+- greetings
+- hello everybody
+- hello is anybody there
+- hello robot
+- hallo
+- heeey
+- hi hi
+- hey
+- hey hey
+- hello there
+- hi
+- hello
+- yo
+- hola
+- hi?
+- hey bot!
+- hello friend
+- Helllo
+- Helo
+- [Hhi](answer_1)
+- [Hy](answer_1)
+- HI
+
+## intent:request_interview
+- I am looking for interview preparation
+- I want to improve my AI Quotient
+- Can you help me with Interview preparation for ML interviews?
+- I am looking for ML interview guidance
+- I am preparing for ML interviews
+- Shazam
+- [Yes](answer_2)
+- They have low variance and they don’t usually overfit
+- [$904](answer_3)
+- [2:3](answer_1)
+- [b@k.com](eid)
+- [shazam](eid)
+- I want to perpare for ML interviews
+- [I want to prepare for an interview](eid)
+- Hyperparameter tuning
+- [Interview tips pls](answer_1)
+- tips for interview
+
+## intent:inform
+- [1:1](answer_1)
+- Odds ratio is [1:2](answer_1)
+- The odds of other child being a boy is [1:1](answer_1)
+- [50:50](answer_1)
+- [50%](answer_1)
+- [Decrease](answer_2)
+- Weights of the input variables will [increase](answer_1)
+- The weights will [decrease](answer_2)
+- [$895](answer_3)
+- [$905](answer_3) is the total reward
+- Total reward will be [895 dollars](answer_3)
+- Expected reward will be [$905](answer_3)
+- [saicharantej99@gmail.com](eid)
+- My email-id is [johanblomquist@outlook.com](eid)
+- s@c.com
+- [$905](answer_3)
+- [$890](answer_3)
+- I will [decrease](answer_2) the weights
+- [2:1](answer_1)
+- 850
+- [$850](answer_3)
+- [decrease](answer_2)
+- [Too many states to consider](answer_1)
+- [Overall Return](answer_1)
+- [Playing a Board Game](answer_1)
+- [Epsilon Greedy](answer_1)
+- [Ram](answer_1)
+- [Policy](answer_1)
+- [Computational Power](answer_1)
+- [10^50](answer_1)
+- [Runs scored by a team](answer_1)
+- [Upper Confidence Bound](answer_1)
+- [Greedy](answer_1)
+- [Epsilon-Greedy](answer_1)
+- [Deciding a movie](answer_1)
+- [0.33](answer_1)
+- [Replacing missing values with Mode](answer_1)
+- [Data fits a long-tailed distribution](answer_1)
+- [The model is overfitted and cannot be generalized for other datasets](answer_1)
+- [bootstrap](answer_1)
+- [Median salary of an Indian](answer_1)
+- [Jaccard Similarity](answer_1)
+- [Speed up convergence](answer_1)
+- [Chebyshev Distance](answer_1)
+- [class_weight](answer_1)
+- [Type 1 error](answer_1)
+- [Policy Gradient](answer_1)
+- [Exploration](answer_1)
+- [Game of Chess](answer_1)
+- [Low Variance](answer_1)
+- [Feature 2](answer_1)
+- [Continue](answer_2)
+- [Gini](answer_1)
+- [increase](answer_1)
+- [905](answer_1)
+- [8045](answer_1)
+- [$756](answer_1)
+- [3:1](answer_1)
+- [s@i.com](eid)
+- [k@s.com](eid)
+- [Decision Tree B](answer_1)[Decision Tree B](answer_1)
+- [Decision Tree A](answer_1)
+- [6 models and 166 test samples](answer_1)
+- [166 models and 834 test samples](answer_1)
+- [It can output values between 0 to inf](answer_1)
+- [It can output values between 0 to 1](answer_1)
+- [Regularization](answer_1)
+- [Residuals should have equal variance](answer_1)
+- [Residuals should be normally distributed](answer_1)
+- [Standard Error](answer_1)
+- [p-value is greater than a threshold](answer_1)
+- [p-value is less than a threshold](answer_1)
+- [Anomaly Detection](answer_1)
+- [Recommendation Engines](answer_1)
+- [30](answer_1)[30%](answer_1)
+- [40](answer_1)[40%](answer_1)
+- [R2](answer_1)
+- [Interquartile Range](answer_1)
+- [Random Forest](answer_1)
+- [Linear Regression](answer_1)
+- [Increase](answer_1)
+- [Sum of Squared Errors](answer_1)
+- [Decision Tree](answer_1)
+- [Logistic Regression](answer_1)
+- [Unsupervised Learning](answer_1)
+- [Reinforcement Learning Techniques](answer_1)
+- [Supervised Learning Algorithms](answer_1)
+- [Stratified sampling](answer_1)
+- [The nodes contain samples that are classified perfectly](answer_1)
+- [The nodes contain samples that are classified randomly](answer_1)
+- [There was class imbalance in the dataset](answer_1)
+- [There were a lot of outliers in the dataset](answer_1)
+- [Working condition of a industrial machine](answer_1)
+- [All principal components are independent of each other](answer_1)
+- [Maximum number of principal components < number of features](answer_1)
+- [The model is underfitted and was unable to learn anything from the training data.](answer_1)
+- [Personal assistant helping you with daily tasks](answer_1)
+- [Super Mario game](answer_1)
+- [Given many emails, you want to determine if they are spam or non-spam emails.](answer_1)
+- [From the user usage patterns on a website, figure out what different groups of users exist](answer_1)
+- [Spreadsheet that calculates sums and other pre-defined functions on given data](answer_1)
+- [A GPS navigation system for finding the fastest route](answer_1)
+- [Ridge Regularization](answer_1)
+- [Lasso Regularization](answer_1)
+- [Increase](answer_1)[Increase the weights](answer_1)
+- [Decrease](answer_2)[Decrease the weights](answer_1)
+- [By minimizing the sum of squared errors](answer_1)
+- [By minimizing the R^2 value](answer_1)
+- [Variance of the dataset is increased](answer_1)
+- [Variance of the dataset is decreased](answer_1)
+- [185](answer_1)
+- [85](answer_1)
+- [Normal Distribution](answer_1)
+- [Long-tailed Distribution](answer_1)
+- [1 or 2](answer_1)
+- [Dynamic Programming](answer_1)
+- [Fluctuating variance among the error term values](answer_1)
+- [Input variables are independent](answer_1)
+- [Value Iteration](answer_1)
+- [Policy Iteration](answer_1)
+- [V(S0)=V(S0)+Alpha(Gt+Gamma*V(S1)](answer_1)
+- [V(S0)=V(S0)+Alpha(Immediate Reward+Gamma*V(S1)-V(S0](answer_1))
+- [Temporal Difference Learning](answer_1)
+- [Monte Carlo Technique](answer_1)
+- [Difficult to define Reward function](answer_1)
+- [Immediate Reward](answer_1)
+- [Selling a used car](answer_1)
+- [Charan](answer_1)
+- [Reward](answer_1)
+- [Stochastic nature of problems](answer_1)
+- [2^32](answer_1)
+- [Speed of the Ball delivered by a bowler](answer_1)
+- [Greedy Approach](answer_1)
+- [Gradient Boosting](answer_1)
+- [Planning the next move in Chess](answer_1)
+- [Dropping missing values](answer_1)
+- [Data fits a normal distribution](answer_1)
+- [criterion](answer_1)
+- [Mean salary of an Indian](answer_1)
+- [Dunn's index](answer_1)
+- [Handle outliers](answer_1)
+- [Type 2 error](answer_1)
+- [1:2](answer_1)
+- [Exploitation](answer_1)
+- [KNN](answer_1)
+- [Decision Trees](answer_1)
+- [Information gain](answer_1)
+- [Neural Networks](answer_1)
+- [Leaky Relu](answer_1)
+- [Tanh](answer_1)
+- [Dropout](answer_1)
+- [Experience Replay](answer_1)
+- [Cancellations](answer_1)
+- [Fuel consumed](answer_1)
+- [false](answer_1)
+- [True](answer_1)
+- [20](answer_1)
+- [10](answer_1)
+- [Randomized Search](answer_1)
+- [Grid Search](answer_1)
+- [Variance](answer_1)
+- [Bias](answer_1)
+- [FALSE](answer_1)
+- [TRUE](answer_1)
+- [ramjondhale1@gmail.com](eid)
+- [shreya@esmagico.in](answer_1)
+- [aniketgopale.ag@gmail.com](eid)
+- [justvarad@gmail.com](eid)
+- [verma.deepakkumar@gmail.com](eid)
+- [madhavibhat2@gmail.com](eid)
+- [bharu1905@gmail.com](eid)
+- [anranya@gmail.com](eid)
+- [abhijeet.karodiwal@gmail.com](eid)
+- [subhash.bohra@gmail.com](eid)
+- [kumar.bikash415@gmail.com](eid)
+- [rajkumar408@yahoo.com](eid)
+- [akashindeekshainiit@gmail.com](eid)
+- [belsarej@gmail.com](eid)
+- [anirudhpvs98@gmail.com](eid)
+- [lalalaaa463@gmail.com](eid)
+- [ykirthiraj@gmail.com](eid)
+- [reachanandjoshi@gmail.com](eid)
+- [wowitsgreat1990@gmail.com](eid)
+- [sreyareddy2000@gmail.com](eid)
+- [vb@ter.com](eid)
+- [ankit3j@gmail.com](eid)
+- [kiranexcell@gmail.com](eid)
+- [reche.anup@gmail.com](eid)
+- [sachinkudtarkar07@gmail.com](eid)
+- [subratamondira@gmail.com](eid)
+- [p@d.com](eid)
+- [mailtosrijesh@gmail.com](eid)
+- [aliens.deepak@gmail.com](eid)
+- [vvvvvvra@gmail.com](eid)
+- [h@gmail.com](eid)
+- [ashwanikumar04@gmail.com](eid)
+- [sanghvianurag2602@gmail.com](eid)
+- [kvamsi.eee@gmail.com](eid)
+- [vipul@gmail.com](eid)
+- [ravitejasrikakulapu279@gmail.com](eid)
+- [judeh.raja@gmail.com](eid)
+- [shrikanthst@gmail.com](eid)
+- [jayadev.mateti@gmail.com](eid)
+- [edukishore1303@gmail.com](eid)
+- [yamrithaagoud@gmail.com](eid)
+- [deepakpro@gmail.com](eid)
+- [mutumjagat123@gmail.com](eid)
+- [praise.onyehanere@gmail.com](eid)
+- [catchgp@gmail.com](eid)
+- [bjintle@gmail.com](eid)
+- [ashok.brahma04@gmail.com](eid)
+- [maanravi007@gmail.com](eid)
+- [kspriyanka11@gmail.com](eid)
+- [aritra98.ray@gmail.com](eid)
+- [j.sadam2510@gmail.com](eid)
+- [j.sadam25@gmail.com](eid)
+- [dhanushnayak.ram@gmail.com](eid)
+- [vishnuku@gmail.com](eid)
+- [saidivyabh@gmail.com](eid)
+- [dewangan.navya040@gmail.com](eid)
+- [sushilkjacob@gmail.com](eid)
+- [penumaka2000@yahoo.com](eid)
+- [Sonal.Dhanetwal@gmail.com](eid)
+- [narendra.anguluri@gmail.com](eid)
+- [dinu7372@gmail.com](eid)
+- [pradipta.jucse@gmail.com](eid)
+- [dama.madhava@gmail.com](eid)
+- [saradhix@Yahoo.com](eid)
+- [ratan.kalluri@gmail.com](eid)
+- [bhumula.nandini1602@gnail.com](eid)
+- [venkat1003@gmail.com](eid)
+- [vishalbajetha@gmail.com](eid)
+- [barthapuram@gmail.com](eid)
+- [sonub396@gmail.com](eid)
+- [srinivas.eie@gmail.com](eid)
+- [narendralv@gmail.com](eid)
+- [gjanitt@gmail.com](eid)
+- [azad.690@gmail.com](eid)
+- [priyanka.konakandla@gmail.com](eid)
+- [tarun.bagade@gmail.com](eid)
+- [hdfs4all@gmail.com](eid)
+- [ramesh.goli.ece@gmail.com](eid)
+- [veera.chaithan9@gmail.com](eid)
+- [sourodipkundu2651996@gmail.com](eid)
+- [rangask7@gmail.com](eid)
+- [ankur.mca2006@gmail.com](eid)
+- [michaelkarre@gmail.com](eid)
+- [sijomon3@gmail.com](eid)
+- [ranjeet.garodia@gmail.com](eid)
+- [roop.talekar@gmail.com](eid)
+- [ramani.kvp@gmail.com](eid)
+- [devasenavathyam@gmail.com](eid)
+- [ilango.aws@gmail.com](eid)
+- [seenumd@gmail.com](eid)
+- [ivpnath1@gmail.com](eid)
+- [samk2104@gmail.com](eid)
+- [pani.anand90@gmail.com](eid)
+- [manasmanu1@gmail.com](eid)
+- [bhavyachalla64@gmail.com](eid)
+- [prapti.bhakta@gmail.com](eid)
+- [welcomenandhini@gmail.com](eid)
+- [premji731@gmail.com](eid)
+- [dcrao6155@gmail.com](eid)
+- [jaggi121286@gmail.com](eid)
+- [bhanja.biswal@gmail.com](eid)
+- [1986.vimal@gmail.com](eid)
+- [bgrnxt@gmail.com](eid)
+- [sowndharya1990@gmail.com](eid)
+- [addala.tejaswini@gmail.com](eid)
+- [nisha.in@outlook.com](eid)
+- [raks.amr@gmail.com](eid)
+- [ar.aravinda@gmail.com](eid)
+- [abhishek.lagran@gmail.com](eid)
+- [jithinjagadeswaran@gmail.com](eid)
+- [lipu05@gmail.com](eid)
+- [ashwinyenigalla@gmail.com](eid)
+- [sankar.bdml@gmail.com](eid)
+- [birupakhyalenka9@gmail.com](eid)
+- [hkk42@cornell.edu](answer_1)
+- [derrick.jaggers@gmail.com](eid)
+- [chidu_r@yahoo.com](eid)
+- [shineed@gmail.com](eid)
+- [smanjubhargavi@yahoo.com](eid)
+- [mohitraj11@gmail.com](eid)
+- [mandava1488@gmail.com](eid)
+- [mahesh4siebel@gmail.com](eid)
+- [nagalingamnirmalkumar@gmail.com](eid)
+- [anupam.ranjan.2000@gmail.com](eid)
+- [ghosal.deep@gmail.com](eid)
+- [somesh.sehgal@gmail.com](eid)
+- [deepika.jeswani@gmail.com](eid)
+- [periyasamycse@gmail.com](eid)
+- [anandvelamuri@gmail.com](eid)
+- [ajayrana3jan@gmail.com](eid)
+- [nikhilagrawal328@gmail.com](eid)
+- [rv2oct@gmail.com](eid)
+- [sushreeta.sahu1@gmail.com](eid)
+- [basu.saikat2179@gmail.com](eid)
+- [sushanbhattacharjee@gmail.com](eid)
+- [nitin194@gmail.com](eid)
+- [sudhiir43@outlook.com](eid)
+- [jashuvareddi@gmail.com](eid)
+- [shreyas1995.s@gmail.com](eid)
+- [ilango.sw@gmail.com](eid)
+- [rahultiwari150188@gmail.com](eid)
+- [Kankarianusha96@gmail.com](eid)
+- [kaushikjagini95@gmail.com](eid)
+- [shiv.11sep@gmail.com](eid)
+- [rajesh_thota_kumar@yahoo.com](eid)
+- Exit
+- [sivakumar.panneerselvam@gmail.com](eid)
+- [rtsskrlearn@gmail.com](eid)
+- [vyomacy@gmail.com](eid)
+- [mohisinha369248@gmail.com](eid)
+- [lochan.cbit@gmail.com](eid)
+- [jason.duke@gmail.com](eid)
+- [f@c.com](eid)
+- [895](answer_1)
+- 50
+- [Increase](answer_1) the weights
+- [Decrease](answer_2) the weights
+- [Decision Tree B](answer_1)
+- [30](answer_1)%
+- [40](answer_1)%
+- [Apriori Algorithm](answer_1)
+- [Euclidean Distance](answer_1)
+- [Manhattan Distance](answer_1)
+- 0.015
+- [0.03](answer_1)
+- Boosting
+- [Bagging](answer_1)
+- [11:9](answer_1)
+- [7:5](answer_1)
+- [0](answer_1)
+- [60](answer_1)%
+- [PCA](answer_1)
+- [Hypothesis Testing](answer_1)
+- [Naive Bayes](answer_1)
+- [Snakes and Ladders](answer_1)
+- [R-Square](answer_1)
+- [0.4](answer_1)
+- [0.67](answer_1)
+- [gideon@gmail.com](eid)
+- [johan.blomquist@gmail.com](eid)
+- [Skipgram](answer_1)
+- [Word2vec](answer_1)
+- [False](answer_1)
+- [saicharantej99@gmail.con](answer_1)
+- [If statement](answer_1)
+- [Random forest](answer_1)
+- [Svm](answer_1)
+- [Data visualisation](answer_1)
+- [Data visualization](answer_1)
+- [Class imbalance](answer_1)
+- [Overfitting](answer_1)
+- [Linear regression](answer_1)
+- [kalakauva@gmail.com](eid)
+- data science interview questions pls
+- [abhi@gmail.com](eid)
+- [rameshbabugonegandla@gmail.com](eid)
+- [saicharantej@mlfeedback.com](eid)
+- [Abc@gmail.com](eid)
+- [Ta](answer_1)
+- [Abhi@9830](answer_1)
+- [jack@ass.com](eid)
+- [narendra05@gmail.com](eid)
+
+## intent:affirm
+- yeah a cheap restaurant serving international food
+- correct
+- ye
+- uh yes
+- let's do it
+- yeah
+- um yes
+- yes knocking
+- that's correct
+- yes yes
+- right
+- yea
+- yes
+- yes right
+- yes and i dont care
+- right on
+- i love that
+
+## intent:deny
+- no
+- no new selection
+- no thanks
+- no thank you
+- uh no
+- breath no
+- do you have something else
+- no this does not work for me
+- [No](answer_1)
+
+## intent:thankyou
+- um thank you good bye
+- okay cool uh good bye thank you
+- okay thank you good bye
+- you rock
+- and thats all thank you and good bye
+- thank you and good bye
+- sorry about my mistakes thank you good bye
+- noise thank you good bye
+- thank you goodbye noise
+- okay thank you goodbye
+- uh thank you good bye
+- thank you goodbye
+- thank you goodbye noise thank you goodbye
+- breath thank you goodbye
+- thank you
+- okay thank you
+- thanks goodbye
+- ah thank you goodbye
+- thank you noise
+- thank you good bye
+- breath thank you very much goodbye
+- thanks
+- noise thank you goodbye
+- unintelligible thank you goodbye
+- uh okay thank you good bye
+- thank you bye
+- um okay thank you good bye
+- [Thanks](answer_1)
+- thank you bye for now
+
+## intent:chitchat
+- can you share your boss with me?
+- i want to get to know your owner
+- i want to know the company which designed you
+- i want to know the company which generated you
+- i want to know the company which invented you
+- i want to know who invented you
+- May I ask who invented you?
+- please tell me the company who created you
+- please tell me who created you
+- tell me more about your creators
+- tell me more about your founders
+- Ahoy matey how are you?
+- are you alright
+- are you having a good day
+- Are you ok?
+- are you okay
+- Do you feel good?
+- how are things going
+- how are things with you?
+- How are things?
+- how are you
+- how are you doing
+- how are you doing this morning
+- how are you feeling
+- how are you today
+- How are you?
+- How is the weather today?
+- What's the weather like?
+- How is the weather?
+- What is the weather at your place?
+- Do you have good weather?
+- Is it raining?
+- What's it like out there?
+- Is it hot or cold?
+- Beautiful day, isn't it?
+- What's the weather forecast?
+- Is it quite breezy outside?
+- [The next milestone during your car journey](answer_1)
+- [Ok grt](answer_1)
+- Who are you
+
+## intent:stop
+- ok then you cant help me
+- that was shit, you're not helping
+- you can't help me
+- you can't help me with what i need
+- i guess you can't help me then
+- ok i guess you can't help me
+- that's not what i want
+- ok, but that doesnt help me
+- this is leading to nothing
+- this conversation is not really helpful
+- you cannot help me with what I want
+- I think you cant help me
+- hm i don't think you can do what i want
+- stop
+- stop go back
+- do you get anything?
+- and you call yourself bot company? pff
+- and that's it?
+- nothing else?
+- [Bandit Algorithms](answer_1)
+- [Bye](answer_1)
+- [exit](eid)
+
+## intent:bot_challenge
+- are you a bot?
+- are you a human?
+- am I talking to a bot?
+- am I talking to a human?
+
+## intent:missing_values
+- I am looking to handle missing values
+- I am looking for missing values
+- I want to handle missing values
+
+## intent:imbalance_reco
+- How do I handle class imbalance?
+- How do I handle [Class Imbalance](answer_1)?
+- How do I handle class imbalance problem?
+- How do I handle Class imbalance problem?
+- How can I handle class imbalance?
+- How to handle class imbalance?
+- What should I do to solve [Class Imbalance problem](answer_1)?
+- Can you help me solve class imbalance problem?
+- How do I solve a [Class Imbalance problem](answer_1)?
+- How do I handle class imbalance?/
+- How to solve class imbalance
+- What to do for class imbalance
+- I am looking to solve class imbalance problem
+- How do I handle imbalanced problems?
+- I want to handle class imbalance
+
+## intent:outlier_reco
+- How do I handle outliers in my dataset?
+- How do I detect outliers in my dataset?
+- How to handle outliers?
+- How to detect outliers?
+- How to detect outliers in my dataset?
+
+## intent:knn_reco
+- Can you tell me more about KNN?
+- What is this KNN?
+- What is KNN?
+
+## intent:smote_reco
+- How to use SMOTE
+
+## intent:poisson_reco
+- Is my distribution following poisson?
+
+## intent:code_reco
+- I am looking for code recommendations
+
+## intent:encoding_reco
+- How to handle encoding?
+- How to convert a categorical variable to numerical?
+- How to perform encoding?
+- I want to perform categorical variable encoding
+
+## intent:wordcloud_reco
+- What is the code for Word Cloud?
+- How to generate a word cloud?
+- How to generate word cloud?
+
+## intent:stopwordaddremoval_reco
+- I want to add stop words
+- I want to remove stop words from the Spacy package
+- I want to remove stop words
+- [Stopword](answer_1)
+- [Stopwords](answer_1)
+
+## intent:barchart_reco
+- barchart
+- bar chart
+- create barchart
+- [Bar chart](answer_1)
+- What is a bar chart?
+- [Barchart](answer_1)
+
+## intent:barchart_code_reco
+- [Code for Bar chart](answer_1)
+- Show me the code for drawing a bar chart
+- [Code for Barchart](answer_1)
+
+## intent:linechart_reco
+- [Line chart](answer_1)
+
+## intent:linechart_code_reco
+- code for line chart
+
+## intent:model_explain
+- Please let me know how to explain a [Machine Learning model](answer_1)
+- How to explain a model?
+- How to explain my model?
+
+## intent:optimizer
+- [Which optimizer to choose](answer_1)?
+
+## intent:curse_of_dimensionality_reco
+- How to handle curse of dimensionality?
+
+## intent:ner_dn
+- How to perform named entity recognition?
+
+## intent:stem_ner_dn
+- How to perform Stemming?
+
+## intent:histogram_reco
+- [histogram](answer_1)
+- [Histogram](answer_1)
+
+## intent:histogram_code_reco
+- code for histogram
+- [Code for Histogram](answer_1)
+
+## intent:Piechart_reco
+- [Piechart](answer_1)
+
+## synonym:asian
+- pan asian
+- asian oriental
+
+## synonym:gastropub
+- gastro pub
+
+## regex:eid
+- /([a-zA-Z0-9._-]+@[a-zA-Z0-9._-]+\.[a-zA-Z0-9_-]+)/

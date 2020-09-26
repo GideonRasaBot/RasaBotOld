@@ -1,0 +1,8 @@
+FROM python:3.7.5
+RUN python -m venv --system-site-packages ./venv --python=/usr/bin/python $VIRTUAL_ENV
+ENV PATH="$VIRTUAL_ENV/bin:$PATH"
+RUN pip install rasa
+RUN python -m spacy download en_core_web_md
+RUN python -m spacy link en_core_web_md en
+RUN rasa init --no-prompt
+CMD ["python", "actions.py"]

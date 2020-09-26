@@ -1,0 +1,782 @@
+intents:
+- restart
+- barchart_bokeh_reco
+- histogram_code_reco
+- barchart_plotly_reco
+- histogram_bokeh_reco
+- histogram_reco
+- histogram_plotly_reco
+- histogram_ggplot_reco
+- barchart_reco
+- barchart_ggplot_reco
+- data_visualization_reco
+- stem_words
+- stem_dn
+- stem_sentence
+- lime
+- eli5
+- model_explain
+- shap
+- tensorboard
+- linechart_matplotlib_reco
+- linechart_code_reco
+- linechart_reco
+- linechart_seaborn_reco
+- linechart_plotly_reco
+- linechart_bokeh_reco
+- linechart_ggplot_reco
+- request_interview:
+    use_entities: []
+- chitchat:
+    use_entities: []
+- code_reco:
+    use_entities: []
+- inform
+- missing_values
+- affirm
+- deny
+- stop
+- thankyou
+- greet
+- knn_reco
+- bot_challenge
+- imbalance_reco
+- smote_reco
+- null_reco
+- impute_reco
+- checkpoint
+- cost_reco
+- metric_reco
+- outlier_reco
+- special_reco
+- html_reco
+- punctuation_reco
+- poisson_reco
+- duplicate_reco
+- onehot_reco
+- label_reco
+- binary_reco
+- frequency_reco
+- meanencoder_reco
+- encoding_reco
+- categorical_reco
+- target_reco
+- wordcloud_reco
+- stem_reco
+- stopwordaddremoval_reco
+- barchart_code_reco
+- histogram_seabron_reco
+- barchart_matplotlib_reco
+- barchart_seabron_reco
+- histogram_matplotlib_reco
+- optimizer
+- bgd
+- sgd
+- mbgd
+- momentum
+- adagrad
+- adadelta
+- rmsprop
+- adam
+- rmsprom
+- curse_of_dimensionality_reco
+- pca_reco
+- lda_reco
+- ner_dn
+- stem_ner
+- stem_cner
+- stem_ner_dn
+- stem_word_reco
+- stem_sentence_reco
+- Piechart_code_reco
+- Piechart_reco
+- Piechart_seaborn_reco
+entities:
+- eid
+- answer_1
+- answer_2
+- answer_3
+- question
+- answer
+- option_1
+- option_2
+- explanation
+slots:
+  answer:
+    type: unfeaturized
+    auto_fill: false
+  answer_1:
+    type: text
+    auto_fill: false
+  answer_2:
+    type: text
+    auto_fill: false
+  answer_3:
+    type: unfeaturized
+    auto_fill: false
+  eid:
+    type: unfeaturized
+    auto_fill: false
+  explanation:
+    type: unfeaturized
+    auto_fill: false
+  option_1:
+    type: unfeaturized
+    auto_fill: false
+  option_2:
+    type: unfeaturized
+    auto_fill: false
+  question:
+    type: unfeaturized
+    auto_fill: false
+  requested_slot:
+    type: unfeaturized
+templates:
+  utter_ask_eid:
+  - text: Please provide your email-id
+  utter_ask_answer_1:
+  - text: '{question} Here are the options: a.{option_1} b.{option_2}'
+  utter_ask_answer_2:
+  - text: Do you want to take more questions?
+    buttons:
+    - title: Continue
+      payload: '/inform{"answer_2": "value"}'
+    - title: Exit
+      payload: /restart
+  utter_ask_answer_3:
+  - text: If there is a 90% chance that you will win a lottery of $1000 and a 10%
+      chance that you will lose $500, what is your total expected reward?
+  utter_submit:
+  - text: All done!
+  utter_slots_values:
+  - text: 'Here are your answers   - Email-id: {eid}\n              - Question 1:
+      {answer_1}\n              - Question_2: {answer_2}\n              - Question_3:
+      {answer_3}'
+  utter_noworries:
+  - text: You are welcome :)
+  utter_chitchat:
+  - text: Chitchat
+  utter_ask_continue:
+  - text: do you want to continue?
+  utter_default:
+  - text: Apologies. My capabilities are still evolving. Can you try again? You can
+      also choose to restart the conversation.
+    buttons:
+    - title: Restart the conversation
+      payload: /restart
+  utter_greet:
+  - text: 'Hello! I am Gideon. I can help you master the world of Data Science. '
+    buttons:
+    - title: Code Recommendations
+      payload: /code_reco
+    - title: Prepare for interview
+      payload: /request_interview
+  utter_iamabot:
+  - text: I am a bot, powered by Rasa.
+  utter_restart:
+  - text: 'Hello! I am Gideon. I can help you master the world of Data Science. '
+    buttons:
+    - title: Code Recommendations
+      payload: /code_reco
+    - title: Prepare for interview
+      payload: /request_interview
+  utter_bye:
+  - text: Great interviewing you. Return soon!
+  utter_ask_code:
+  - text: Which of the below problems suit your requirement?
+    buttons:
+    - title: Class Imbalance
+      payload: /imbalance_reco
+    - title: Missing Values
+      payload: /missing_values
+    - title: Outlier Detection
+      payload: /outlier_reco
+    - title: Removing Duplicates
+      payload: /duplicate_reco
+    - title: Encoding Categorical Variables
+      payload: /encoding_reco
+    - title: Generate a Word Cloud
+      payload: /wordcloud_reco
+    - title: Data Visulization
+      payload: /data_visualization_reco
+  utter_missing_values:
+  - text: Here are some ways. Choose an option to see the code.
+    buttons:
+    - title: Dropping Null Values
+      payload: /null_reco
+    - title: Imputing Null Values
+      payload: /impute_reco
+    - title: Replacing with KNN
+      payload: /knn_reco
+  utter_knn:
+  - text: "You can replace missing values in a row with values of a similar row in\
+      \ the dataset. The similarity between the rows is calculated using the KNN Algorithm.Here\
+      \ is the code:\nfrom sklearn.impute import KNNImputer\n X = [[1, 2, np.nan],\
+      \ [3, 4, 3], [np.nan, 6, 5], [8, 8, 7]]\n imputer = KNNImputer(n_neighbors=2)\n\
+      \ imputer.fit_transform(X)"
+  utter_imbalance:
+  - text: Here are some ways. Choose an option to see the code.
+    buttons:
+    - title: Oversampling using SMOTE
+      payload: /smote_reco
+    - title: Cost function tuning
+      payload: /cost_reco
+    - title: Choose right metric
+      payload: /metric_reco
+  utter_smote:
+  - text: "SMOTE is a oversampling technique that augments the minority class samples\n\
+      using KNN. Here is the code - \n\npip install imblearn\nfrom imblearn.over_sampling\
+      \ import SMOTE\nsmote = SMOTE(ratio='minority')\nX_sm, y_sm = smote.fit_sample(X,\
+      \ y)"
+  utter_null:
+  - text: "If the no.of missing values is less, you can proceed to dropping them.\
+      \ Here is\nthe code - \n\ndf = pd.DataFrame()\n\ndf.dropna() #Drop all the rows\
+      \ containing null values\n\ndf.dropna(axis=1) #Drop a column containing null\
+      \ values\n\ndf.dropna(how='all') #Drop the rows where all elements are missing.\n\
+      \ndf.dropna(thresh=2) #Keep only the rows with at least 2 non-NA values."
+  utter_impute:
+  - text: "Here is how you can fill the missing values in a dataframe. Remember, you\
+      \ always need to split the data into training and test datasets before imputing\
+      \ the missing values! \n df = pd.DataFrame()\n df.fillna(0) #Replace all NaN\
+      \ values with 0\n df.fillna(df.mean()) #Replace NaN values in a column with\
+      \ its mean\n "
+  utter_cost:
+  - text: "You can handle the class imbalance problem by forcing the ML algorithms\
+      \ to penalize the misclassifications done for minority class more than those\
+      \ for the majority class. You need to pass the 'class_weight' parameter to the\
+      \ model. Here is the code -\nfrom sklearn.linear_model import LogisticRegression\n\
+      logreg = LogisticRegression(class_weight='balanced') \n \n \n "
+  utter_metric:
+  - text: "For imbalanced problems, 'F1-Score' and 'ROC-AUC' metrics better evaluate\
+      \ a model than 'Accuracy'. Here is the code to get these metrics.\nfrom sklearn\
+      \ import metrics\nprint (metrics.classification_report(y_test, y_pred_test)\n\
+      print (metrics.roc_curve(y_test,y_pred_test))"
+  utter_outliers:
+  - text: "Outlier is an extreme value in the dataset that affects the performance\
+      \ of a model. Here is a way to handle them -\nStep 1: Identify Outliers\ndf.describe()\
+      \ #check if mean and median of a column are significantly different\nUse a 'Box\
+      \ Plot' to visualize the column\nsns.boxplot(df.column)\nStep 2: Remove Outliers\n\
+      Q1 = boston_df.quantile(0.25)\nQ3 = boston_df.quantile(0.75)\nIQR = Q3 - Q1\n\
+      boston_df_out = boston_df\\[~((boston_df < (Q1 - 1.5 * IQR)) | (boston_df >\
+      \ (Q3 + 1.5 * IQR))).any(axis=1))] #contains data without outliers"
+  utter_special:
+  - text: Here are some ways. Choose an option to see the code.
+    buttons:
+    - title: Remove HTML tags
+      payload: /html_reco
+    - title: Remove Punctuation
+      payload: /punctuation_reco
+  utter_html:
+  - text: "Here are two approaches to remove HTML code.\nApproach 1: \nimport re\n\
+      text=\"<html> Hello </html>\"\nclean = re.compile('<.*?>')\nclean_text= re.sub(clean,\
+      \ '', text)\nApproach 2: \nimport re\nTAG_RE = re.compile(r'<[^>]+>')\ndef remove_tags(text):\n\
+      \   return TAG_RE.sub('', text)"
+  utter_punctuation:
+  - text: "Here is how you can remove punctuation from your input text. Code:\npunct_marks\
+      \ = \\[';', ':', '!', \"*\"]\ntest_string = \"He**LLo * o:,,Wo ! r;l * d*!:!\
+      \ !\"\ntest_string = ''.join(i for i in test_string if not i in punct_marks) "
+  utter_knn_tutorial:
+  - text: https://www.youtube.com/watch?v=HVXime0nQeI
+  utter_tutorial:
+  - text: Here is a tutorial that can help you.
+  utter_poisson:
+  - text: Can you tell me the mean and variance of your dataset?
+  utter_duplicate:
+  - text: "Duplicated method in pandas can be used for this purpose. Here is the code\
+      \ -\n i=df.shape[0]\n temp = df\\[df.duplicated()]\n print(\"No of Duplicate\
+      \ Values = \",temp\\[0]-i)\n #Removing Duplicate Values \n df.drop(temp.index,inplace=True,axis=1)\
+      \  \n ."
+  utter_onehot:
+  - text: "One hot encoding is a representation of unordered categorical variables\
+      \ as binary vectors. Here is the code -\n cat_columns = \\[\"Column1\", \"Column2\"\
+      ]\n df_processed = pd.get_dummies(df,columns=cat_columns)    df_new=pd.concat(\\\
+      [df,df_processed],axis=1)  \n ."
+  utter_label:
+  - text: "Label encoding converts ordered categorical variables to a numerical variable.\n\
+      \ Here is the code -\n from sklearn.preprocessing import LabelEncoder \n label_encoder=\
+      \ LabelEncoder()\n     df\\['column_name']=label_encoder.fit_transform(df\\\
+      ['ordered_column_name'])"
+  utter_binary:
+  - text: "Binary encoding converts ordinal categorical variables to a binary encoded\
+      \ format.This is preferred to Label Encoding when your categorical variable\
+      \ contains a lot of values. \n Here is the code -\n import category_encoders\
+      \ as ce \n column_name_enc= ce.BinaryEncoder(cols\\['column_name'])  column_name_bin=column_name_enc.fit_transform(X=temp_encd\\\
+      ['column_name'])\ndf_new=pd.concat([df,column_name_bin],axis=1)  "
+  utter_frequency:
+  - text: "Frequency encoding is used when somehow the input categorical variable\
+      \ is related to the target variable.An example of this is 'Sentiment Analysis'.\n\
+      \ Here is the code -\n fe = df.groupby('Temperature').size()/len(df) \n #Temperature\
+      \ is a categorical variable (hot,cold,mild)\n #Target variable is binary\n df.loc[:,'Temp_freq_encode']\
+      \ = df['Temperature'].map(fe)\n #Temp_freq_encode is the new encoded variable"
+  utter_meanencoder:
+  - text: "Mean encoding is used when somehow the input categorical variable is related\
+      \ to the multi-class target variable.An example of this is 'Sentiment Analysis'.\n\
+      \ Here is the code -\n fe = df.groupby(\\['Temperature'])\\['Target'].mean().to_dict()\
+      \ \n #Temperature is a categorical variable (hot,cold,mild)\n #Target variable\
+      \ is a categorical variable\n df.loc[:,'Temp_mean_encode'] = df['Temperature'].map(fe)\n\
+      \ #Temp_mean_encode is the new encoded variable"
+  utter_encode:
+  - text: 'Do you want to perform encoding with respect to the target variable? '
+    buttons:
+    - title: Yes
+      payload: /target_reco
+    - title: No
+      payload: /categorical_reco
+  utter_categorical_reco:
+  - text: 'Are your Categorical variables ordered or unordered? '
+    buttons:
+    - title: Ordered
+      payload: /categorical_reco
+    - title: Unordered
+      payload: /onehot_reco
+  utter_categorical_question:
+  - text: Do you have a lot of categories (>10)?
+    buttons:
+    - title: Yes
+      payload: /binary_reco
+    - title: No
+      payload: /label_reco
+  utter_wordcloud:
+  - text: "Here is the code to generate a Word Cloud\n\nfrom wordcloud import WordCloud,\
+      \ STOPWORDS\nimport matplotlib.pyplot as plt\ntext = neg\\['verified_reviews'].values\n\
+      wordcloud = WordCloud(\n  width = 3000,\n  height = 2000,\n  background_color\
+      \ = 'black',\n  stopwords = STOPWORDS).generate(str(text))\nfig = plt.figure(\n\
+      \  figsize = (40, 30),\n  facecolor = 'k',\n  edgecolor = 'k')\nplt.imshow(wordcloud,\
+      \ interpolation = 'bilinear')\nplt.axis('off')\nplt.tight_layout(pad=0)\nplt.show()"
+  utter_stopwordaddremoval:
+  - text: "Below is the code to add and remove stopwords in Spacy package.\nAdd Stopwords:\
+      \ \n1. To add single stop word   ==> STOP_WORDS.add('Test')\n2.To add Multiple\
+      \ stop word ==> STOP_WORDS |= {\"Token1\",\"Token2\"}\nRemove Stopwords:\n1.\
+      \ To remove single stop word   ==> STOP_WORDS.remove('Test')\n2. To remove Multiple\
+      \ stop word ==> STOP_WORDS -= {\"Token1\",\"Token2\"}"
+  utter_ask_code1:
+  - text: Which python library you want to use for linechart?
+    buttons:
+    - title: Matplotlib
+      payload: /linechart_matplotlib_reco
+    - title: Seaborn
+      payload: /linechart_seaborn_reco
+    - title: Plotly
+      payload: /linechart_plotly_reco
+    - title: Bokeh
+      payload: /linechart_bokeh_reco
+    - title: Ggplot
+      payload: /linechart_ggplot_reco
+  utter_ask_code2:
+  - text: Which python library you want to use for barchart?
+    buttons:
+    - title: Matplotlib
+      payload: /barchart_matplotlib_reco
+    - title: Seaborn
+      payload: /barchart_seaborn_reco
+    - title: Plotly
+      payload: /barchart_plotly_reco
+    - title: Bokeh
+      payload: /barchart_bokeh_reco
+    - title: Ggplot
+      payload: /barchart_ggplot_reco
+  utter_ask_code3:
+  - text: Which python library you want to use for histogram?
+    buttons:
+    - title: Matplotlib
+      payload: /histogram_matplotlib_reco
+    - title: Seaborn
+      payload: /histogram_seaborn_reco
+    - title: Plotly
+      payload: /histogram_plotly_reco
+    - title: Bokeh
+      payload: /histogram_bokeh_reco
+    - title: Ggplot
+      payload: /histogram_ggplot_reco
+  utter_barchart:
+  - text: "A Bar chart or graph is a data visualization technique where each category\
+      \ is\nrepresented by a rectangle. The height of the rectangle is in the propotion\
+      \ to\n\nthe values being plotted. It is  also called column chart.    Fundamentaly,\n\
+      \nBar charts is the simplest visualisation   method to show comparison between\n\
+      \nthe categories. It may be vertical or horizontal. '"
+  utter_barchart_matplotlib:
+  - text: "Here is the sample code-\nimport matplotlib.pyplot as plt\nfig = plt.figure()\n\
+      ax = fig.add_axes([0,0,1,1])\nlangs = \\['C', 'C++', 'Java', 'Python', 'PHP']\n\
+      students = [23,17,35,29,12]\nax.bar(langs,students)\nplt.show()"
+  utter_barchart_seaborn:
+  - text: "Here is the sample code-\nimport seaborn as sns\nsns.set(style=\"whitegrid\"\
+      )\ntips = sns.load_dataset(\"tips\")\nax = sns.barplot(x=\"day\", y=\"total_bill\"\
+      , data=tips)"
+  utter_barchart_plotly:
+  - text: "Here is the sample code-  \nimport plotly.graph_objs as go \nlangs = \\\
+      ['C', 'C++', 'Java', 'Python', 'PHP'] \nstudents = \\[23,17,35,29,12] \ndata\
+      \ = \\[go.Bar(   \n  x =  langs,   \n  y = students \n)] \nfig = go.Figure(data=data)\
+      \ \niplot(fig)"
+  utter_barchart_bokeh:
+  - text: "Here is the sample code:  \nfrom bokeh.io import output_file, show \nfrom\
+      \  bokeh.plotting import figure  \noutput_file(\"bars.html\")  \nfruits = \\\
+      ['Apples', 'Pears', 'Nectarines', 'Plums', 'Grapes', 'Strawberries'] \ncounts\
+      \ = \\[5, 3, 4,  2, 4, 6]  \np = figure(x_range=fruits, plot_height=250,   title=\"\
+      Fruit Counts\",\n    toolbar_location=None, tools=\"\")\np.vbar(x=fruits, top=counts,\
+      \ width=0.9)  \np.xgrid.grid_line_color = None \np.y_range.start = 0 \nshow(p)"
+  utter_barchart_ggplot:
+  - text: "Here is the sample code:  \nfrom ggplot import * \nimport pandas as pd\
+      \ \ndf = pd.DataFrame({\"x\":\\[1,2,3,4], \"y\":\\[1,3,4,2]}) \nggplot(aes(x=\"\
+      x\", weight=\"y\"), df) + geom_bar()"
+  utter_data_visualization:
+  - text: Which Data Visualization you want to explore?
+  utter_linechart:
+  - text: "Line chart.. it is one of the easiest ways to visualize data. It is used\
+      \ to\nshow change of data over a continuous time interval. It is also known\
+      \ as Line graph or Line plot.\nLine charts are used to track changes over short\
+      \ or long time interval.\n    When changes are smaller, Line charts are better\
+      \ than Line charts."
+  utter_linechart_matplotlib:
+  - text: "Here is the sample code:\nfrom matplotlib import pyplot as plt\nimport\
+      \ numpy as np\nimport math #needed for definition of pi\nx = np.arange(0, math.pi*2,\
+      \ 0.05)\ny = np.sin(x)\nplt.plot(x,y)\nplt.xlabel(\"angle\")\nplt.ylabel(\"\
+      sine\")\nplt.title('sine wave')\nplt.show()"
+  utter_linechart_seaborn:
+  - text: "Here is the sample code:\nimport seaborn as sns; sns.set()\nfmri = sns.load_dataset(\"\
+      fmri\")\nax = sns.lineplot(x=\"timepoint\", y=\"signal\", data=fmri)"
+  utter_linechart_plotly:
+  - text: "Here is the sample code:  import numpy as np import math #needed for definition\
+      \ of pi   \nxpoints = np.arange(0, math.pi*2, 0.05)  \ny1 =  np.sin(xpoints)\
+      \ \ny2 = np.cos(xpoints)  \ntrace0 = go.Scatter(\n    x = xpoints,   \n    y\
+      \ = y1,    \n    name='Sine' \n ) \ntrace1 = go.Scatter(    \n    x = xpoints,\
+      \    \n    y = y2,   \n    name = 'cos' \n)  data = \\[trace0, trace1]  layout\
+      \ = go.Layout(title = \"Sine and cos\", xaxis = {'title':'angle'}, yaxis = {'title':'value'})\
+      \  fig =  go.Figure(data = data, layout = layout)  iplot(fig)"
+  utter_linechart_bokeh:
+  - text: "Here is the sample code:\n\nfrom bokeh.plotting import figure, output_file,\
+      \ show\noutput_file(\"line.html\")\np = figure(plot_width=400, plot_height=400)\n\
+      # add a line renderer\np.line([1, 2, 3, 4, 5], [6, 7, 2, 4, 5], line_width=2)\n\
+      show(p)"
+  utter_linechart_ggplot:
+  - text: "Here is the sample code:\nfrom ggplot import ggplot, geom_line, aes\nimport\
+      \ pandas as pd\ndf = pd.DataFrame({'a': range(10), 'b': range(5, 15), 'c': range(7,\
+      \ 17)})\ndf\\['x'] = df.index\nggplot(aes(x='x'), data=df) +\\\n    geom_line(aes(y='a'),\
+      \ color='blue') +\\\n    geom_line(aes(y='b'), color='red') +\\\n    geom_line(aes(y='c'),\
+      \ color='green')"
+  utter_histogram:
+  - text: "Histogram is a type of visualization chart. It is an approximate representation\
+      \ of the distribution of numerical data. It is similar to vertical bar chart.\
+      \ It was first introduced by Karl Pearson. \nA histogram is used to summarize\
+      \ discrete or continuous data. "
+  utter_histogram_matplotlib:
+  - text: "Here is the sample code:\nfrom matplotlib import pyplot as plt\nimport\
+      \ numpy as np\nfig,ax = plt.subplots(1,1)\na =   np.array(\\[22,87,5,43,56,73,55,54,11,20,51,5,79,31,27])\n\
+      ax.hist(a, bins = \\[0,25,50,75,100])\nax.set_title(\"histogram of result\"\
+      )\nax.set_xticks(\\[0,25,50,75,100])\nax.set_xlabel('marks')\nax.set_ylabel('no.\
+      \ of students')\nplt.show()"
+  utter_histogram_seaborn:
+  - text: "Here is the sample code:\nimport pandas as pd\nimport seaborn as sb\nfrom\
+      \ matplotlib import pyplot as plt\ndf = sb.load_dataset('iris')\nsb.distplot(df\\\
+      ['petal_length'],kde = False)\nplt.show()"
+  utter_histogram_plotly:
+  - text: "Here is the sample code:\nimport numpy as np\nx1 = np.array(\\[22,87,5,43,56,73,55,54,11,20,51,5,79,31,27])\n\
+      data = \\[go.Histogram(x = x1)]\nfig = go.Figure(data)\niplot(fig)"
+  utter_histogram_ggplot:
+  - text: "Here is the sample code:\nimport pandas as pd\na = \\[1, 1, 2, 1, 1, 4,\
+      \ 5, 6]\ndf = pd.DataFrame(a, columns=\\['a'])\n\nfrom ggplot import *\np =\
+      \ ggplot(aes(x='a'), data=df)\np + geom_histogram(binwidth=1)"
+  utter_histogram_bokeh:
+  - text: "Here is the sample code:\nfrom bokeh.io import output_file, show\nfrom\
+      \ bokeh.plotting import figure\nfrom bokeh.sampledata.autompg import autompg\
+      \ as df\nfrom numpy import histogram, linspace\nx = linspace(0,250,200)\np =\
+      \ figure(plot_height=300)\nhist, edges = histogram(df.hp, density=True, bins=20)\n\
+      p.quad(top=hist, bottom=0, left=edges[:-1], right=edges\\[1:], alpha=0.4,\n\
+      \ \\# same technique and properties for every Bokeh Glyph\n      line_color=\"\
+      red\", line_width=2)\noutput_file(\"hist.html\")\nshow(p)"
+  utter_model_explain:
+  - text: The process of evaluating the model in terms of its usability. The process
+      involves various method to explain the usability of model using different Sample
+      . Below three Algorithums can be handy in doing explaining the Model in detail.
+    buttons:
+    - title: Lime
+      payload: /lime
+    - title: Shap
+      payload: /shap
+    - title: Eli5
+      payload: /eli5
+  utter_shap:
+  - text: "SHAP (SHapley Additive exPlanations) is a game theoretic approach to explain\
+      \ the output of any machine learning model. \n   import shap\n   explainer =\
+      \ shap.LinearExplainer(vote,data=X_test.values)\n   shap_values = explainer.shap_values(X_test)\n\
+      \   shap.initjs()\n   shap.force_plot(explainer.expected_value, shap_values\\\
+      [ind,:], X_test.iloc[ind,:],\n   feature_names=X_test.columns.tolist())\n  \
+      \ shap.summary_plot(shap_values,X_test)\n   shap.dependence_plot(\"balance\"\
+      , shap_values, X_test)"
+  utter_lime:
+  - text: Lime (Local Interpretable Model-Agnostic Explanations) is the process of
+      interpreting the model using a local variable for prediction. import lime import
+      lime.lime_tabular explainer = lime.lime_tabular.LimeTabularExplainer(np.array(X_train),
+      feature_names=X_featurenames, class_names=\['quality'], verbose=True, mode='regression')
+      exp = explainer.explain_instance(X_test.iloc\[0], model.predict) exp.as_pyplot_figure()
+      pd.DataFrame(exp.as_list())
+  utter_eli5:
+  - text: ELI5 is a Python library which allows to visualize and debug various Machine
+      Learning models using unified API. It has built-in support for several ML frameworks
+      and provides a way to explain black-box models. import eli5 from eli5.sklearn
+      import PermutationImportance perm = PermutationImportance(vote, random_state=1).fit(X_test,vote_pred)
+      eli5.show_weights(perm, feature_names = X_test.columns.tolist()) ind=4 eli5.show_prediction(model_fit,
+      doc=X_test.iloc\[\[ind]], feature_names=list(X_test.columns))
+  utter_checkpoint4:
+  - text: Deep learning models can take hours, days or even weeks to train.If the
+      run is stopped unexpectedly, you can lose a lot of work.Checkpointing is an
+      approach where a snapshot of the state of the system (weights of the model)
+      is taken in case of system failure. If there is a problem, not all is lost.
+  utter_tensorboard:
+  - text: TensorBoard enables tracking experiment metrics like loss and accuracy,
+      visualizing the model graph, projecting embeddings to a lower dimensional space,
+      and much more. Here are the steps 1.Open up the command prompt (Windows) or
+      terminal (Ubuntu/Mac) 2.Go into the project home directory 3.If you are using
+      Python virtuanenv, activate the virtual environment you have installed TensorFlow
+      in 4.Make sure that you can see the TensorFlow library through Python. For that,
+      Type in python3, you will get a >>> looking prompt Try import tensorflow as
+      tf If you can run this successfully you are fine 5.Exit the Python prompt (that
+      is, >>>) by typing exit() and type in the following command tensorboard --logdir=summaries
+      --logdir is the directory you will create data to visualize Files that TensorBoard
+      saves data into are called event files Type of data saved into the event files
+      is called summary data Optionally you can use --port=<port_you_like> to change
+      the port TensorBoard runs on 6.You should now get the following message TensorBoard
+      1.6.0 at &lt;url&gt;:6006 (Press CTRL+C to quit) 7.Enter the <url>:6006 in to
+      the web browser You should be able to see a orange dashboard at this point.
+  utter_optimizer:
+  - text: Choose an optimizer
+    buttons:
+    - payload: utter_bgd
+      title: Batch gradient descent
+    - payload: utter_sgd
+      title: Stochastic gradient descent
+    - payload: utter_mbgd
+      title: Mini-batch gradient descent
+    - payload: utter_momentum
+      title: Momentum
+    - payload: utter_adagrad
+      title: Adagrad
+    - payload: utter_adadelta
+      title: Adadelta
+    - payload: utter_rmsprop
+      title: RMSProp
+    - payload: utter_adam
+      title: Adam
+  utter_bgd:
+  - text: 'Batch Gradient Descent calculates the gradient after a subset of samples
+      have been processed in the dataset.Default value for batch_size is 32 samples.  Here
+      is the code: model.fit(trainX, trainy, batch_size=len(trainX))'
+  utter_sgd:
+  - text: 'Stochastic Gradient Descent calculates the gradient after a single training
+      sample gets processed in the dataset.  Here is the code: model.fit(trainX, trainy,
+      batch_size=1)'
+  utter_mbgd:
+  - text: 'Minibatch Gradient Descent calculates the gradient after a subset of training
+      samples gets processed in the dataset. Difference between batch and mini-batch
+      is that the bgd technique considers the entire training set whereas the mini-batch
+      technique focuses on a subset.  Here is the code: model.fit(trainX, trainy,
+      batch_size=64)'
+  utter_momentum:
+  - text: 'Momentum parameter will make the SGD technique converge faster. Here is
+      the code: tf.keras.optimizers.SGD(learning_rate=0.1, momentum=0.9)'
+  utter_adagrad:
+  - text: 'Adagrad is an optimizer with parameter-specific learning rates, which are
+      adapted relative to how frequently a parameter gets updated during training.
+      The more frequent a parameter updates the less updates it gets. Here is the
+      code: tf.keras.optimizers.Adagrad(learning_rate=LEARNING_RATE)'
+  utter_adadelta:
+  - text: "Adadelta is a more robust extension of Adagrad that adapts learning rates\
+      \ based on a moving window of gradient updates, instead of accumulating all\
+      \ past gradients. This way, Adadelta continues learning even when many updates\
+      \ have been done. Compared to Adagrad, in the original version of Adadelta you\
+      \ don't have to set an initial learning rate.  Here is the code: tf.keras.optimizers.Adadelta(learning_rate=0.01,rho=0.7)\
+      \ #rho is the decay rate"
+  utter_rmsprop:
+  - text: "The gist of RMSprop is to maintain a moving average of square of gradients\
+      \ and\ndivide the gradient by the root of this average. Here is the code:\n\
+      tf.keras.optimizers.RMSprop(learning_rate=0.01, rho=0.3, momentum = 0.4)"
+  utter_adam:
+  - text: "Adam optimization is a stochastic gradient descent method that is based\
+      \ on adaptive estimation of first-order and second-order moments.Best optimizer\
+      \ out there.\n Here is the code:\ntf.keras.optimizers.Adam(learning_rate=0.01)"
+  utter_cod:
+  - text: Choose LDA if you are trying to reduce dimensions with respect to target
+      variable. If not, choose PCA.
+    buttons:
+    - title: PCA
+      payload: /pca_reco
+    - title: LDA
+      payload: /lda_reco
+  utter_lda:
+  - text: "Here is the code for LDA:  from sklearn.discriminant_analysis \n   import\
+      \ LinearDiscriminantAnalysis as LDA\n   model = LDA(n_components=3)\n   X_lda\
+      \ = model.fit_transform(X, y)\n   df\\[\"PC1\"] = X_lda\\[:,0]\n   sns.regplot(data\
+      \ = df\\[\\[\"PC1\",\"class\"]], x = \"PC1\",y = \"class\", fit_reg=False,scatter_kws\
+      \ = {'s':50}) \n   "
+  utter_pca:
+  - text: "Here is the code for PCA:  \nfrom sklearn.decomposition import PCA\npca\
+      \ = PCA(n_components=31)\npca.fit(X_min)\nvariance_ratio = pca.explained_variance_ratio\n\
+      variance_ratio_cum_sum=np.cumsum(np.round(pca.explained_variance_ratio_, decimals=4)*100)\n\
+      plt.plot(variance_ratio)"
+  utter_ner_dn:
+  - text: Named Entity Recognition is a process where an algorthm takes a string as
+      input and indentifies relevant nouns like people, places, organization
+    buttons:
+    - payload: utter_ner
+      title: Named Entity Recognition
+    - payload: utter_cner
+      title: Custom Named Entity Recogition
+  utter_ner:
+  - text: "Here is the code:   \ndoc1 = nlp('John lives in New York, where is Mr.Abhishek\
+      \ its already 11PM, he likes burger so he went to KFC')  \nfor i in doc1.ents:\n\
+      \    print(i.text,'-',i.label_)"
+  utter_cner:
+  - text: Here is the code
+    image: https://img1.niftyimages.com/tm1/pkio/58bo?txt=FIRSTNAME
+  utter_stem:
+  - text: Stemming is the process of removing the suffix from a word and reduce it
+      to its root word
+    buttons:
+    - title: Stemming words
+      payload: /stem_word_reco
+    - title: Stemming sentences
+      payload: /stem_sentence_reco
+  utter_stem_word:
+  - text: "\nStep1 : Define the stemmer  from nltk.stem import PorterStemmer from\
+      \ nltk.tokenize import word_tokenize        stemmer = PorterStemmer() \nStep2\
+      \ : Choose some words with a similar stem           example_words = [\"wait\"\
+      ,\"waited\",\"waiting\",\"waits\"]  for w in example_words:     \n   print(stemmer.stem(w))\
+      \  "
+  utter_stem_sentence:
+  - text: "\nHere is the code text = \"I hate waiting in long lines. They waited at\
+      \ the train station together. The field marshal looks on and waits for letters\
+      \ addressed to him\"     tokenized = word_tokenize(text)\\ for words in tokenized:\
+      \                               print(stemmer.stem(words))\n\n  "
+  utter_continue:
+  - text: Do you want to explore more recommendations?
+    buttons:
+    - title: Continue
+      payload: /code_reco
+    - title: I am good
+      payload: /restart
+  utter_piechart:
+  - text: "Pie Chart is a type of graph in which a circle is divided into sectors\
+      \ that each represent a proportion of the whole.  \n\nPie chart generally is\
+      \ used to show  propotional data for each category. It is usually good for displaying\
+      \ data for around 6 categories of fewer."
+  utter_piechart_matplotlib:
+  - text: "Here is the sample code:\n\nfrom matplotlib import pyplot as plt\nimport\
+      \ numpy as np\nfig = plt.figure()\nax = fig.add_axes([0,0,1,1])\nax.axis('equal')\n\
+      langs = \\['C', 'C++', 'Java', 'Python', 'PHP']\nstudents = \\[23,17,35,29,12]\n\
+      ax.pie(students, labels = langs,autopct='%1.2f%%')\nplt.show()"
+  utter_piechart_bokeh:
+  - text: "Here is the sample code:\nfrom math import pi\nimport pandas as pd\nfrom\
+      \ bokeh.io import output_file, show\nfrom bokeh.palettes import Category20c\n\
+      from bokeh.plotting import figure\nfrom bokeh.transform import cumsum"
+  utter_piechart_plotly:
+  - text: "Here is the sample code:\n\nimport plotly\nplotly.tools.set_credentials_file(\n\
+      \  username = 'lathkar', api_key = 'U7vgRe1hqmRp4ZNf4PTN'\n)\nfrom plotly.offline\
+      \ import iplot, init_notebook_mode\ninit_notebook_mode(connected = True)\nimport\
+      \ plotly.graph_objs as go\nlangs = \\['C', 'C++', 'Java', 'Python', 'PHP']\n\
+      students = \\[23,17,35,29,12]\ntrace = go.Pie(labels = langs, values = students)\n\
+      data = \\[trace]\nfig = go.Figure(data = data)\niplot(fig)"
+actions:
+- action_chat_restart
+- utter_slots_values
+- restaurant_form
+- utter_iamabot
+- utter_greet
+- utter_noworries
+- utter_chitchat
+- utter_ask_continue
+- utter_ask_eid
+- utter_ask_answer_1
+- utter_ask_answer_2
+- utter_submit
+- utter_default
+- utter_restart
+- utter_bye
+- utter_ask_code
+- utter_missing_values
+- utter_knn
+- utter_imbalance
+- utter_smote
+- utter_null
+- utter_impute
+- utter_cost
+- utter_metric
+- utter_outliers
+- utter_special
+- utter_html
+- utter_punctuation
+- utter_knn_tutorial
+- utter_tutorial
+- utter_poisson
+- utter_duplicate
+- utter_onehot
+- utter_label
+- utter_binary
+- utter_frequency
+- utter_meanencoder
+- utter_encode
+- utter_categorical_reco
+- utter_categorical_question
+- utter_wordcloud
+- utter_stopwordaddremoval
+- utter_linechart
+- utter_ask_code1
+- utter_linechart_matplotlib
+- utter_linechart_seaborn
+- utter_linechart_plotly
+- utter_linechart_bokeh
+- utter_linechart_ggplot
+- utter_linechart1
+- utter_histogram_seaborn
+- utter_histogram_matplotlib
+- utter_barchart
+- utter_barchart_seaborn
+- utter_barchart_ggplot
+- utter_barchart_matplotlib
+- utter_histogram_bokeh
+- utter_ask_code3
+- utter_histogram_ggplot
+- utter_histogram
+- utter_barchart_bokeh
+- utter_barchart_plotly
+- utter_histogram_plotly
+- utter_ask_code2
+- utter_ask_code 2
+- utter_data_visualization
+- utter_shap
+- utter_lime
+- utter_eli5
+- utter_model_explain
+- utter_checkpoint4
+- ask_code_reco
+- utter_tensorboard
+- utter_stem_dn
+- utter_sentence
+- utter_happy
+- utter_words
+- utter_optimizer
+- utter_bgd
+- utter_sgd
+- utter_mbgd
+- utter_momentum
+- utter_adagrad
+- utter_adadelta
+- utter_rmsprop
+- utter_adam
+- utter_cod
+- utter_lda
+- utter_pca
+- utter_ner_dn
+- utter_ner
+- utter_cner
+- utter_stem
+- utter_stem_word
+- utter_stem_sentence
+- utter_continue
+- utter_piechart_seaborn
+- utter_piechart
+- utter_ask_code4
+- utter_piechart_matplotlib
+- utter_piechart_bokeh
+- utter_piechart_ploty
+- utter_piechart_plotly
+forms:
+- interview_form
