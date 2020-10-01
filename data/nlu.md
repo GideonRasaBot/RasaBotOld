@@ -620,12 +620,10 @@
 - create barchart
 - [Bar chart](answer_1)
 - What is a bar chart?
-- [Barchart](answer_1)
 
 ## intent:barchart_code_reco
 - [Code for Bar chart](answer_1)
 - Show me the code for drawing a bar chart
-- [Code for Barchart](answer_1)
 
 ## intent:linechart_reco
 - [Line chart](answer_1)
@@ -650,23 +648,17 @@
 ## intent:stem_ner_dn
 - How to perform Stemming?
 
-## intent:histogram_reco
-- [histogram](answer_1)
-- [Histogram](answer_1)
-
-## intent:histogram_code_reco
-- code for histogram
-- [Code for Histogram](answer_1)
-
-## intent:Piechart_reco
-- [Piechart](answer_1)
-
 ## synonym:asian
-- pan asian
 - asian oriental
+- pan asian
 
 ## synonym:gastropub
 - gastro pub
 
 ## regex:eid
 - /([a-zA-Z0-9._-]+@[a-zA-Z0-9._-]+\.[a-zA-Z0-9_-]+)/
+
+## intent:duplicate_reco
+- I am looking for removing duplicates
+- I want to handle duplicates removing
+
