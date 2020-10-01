@@ -1,3 +1,6 @@
+session_config:
+  session_expiration_time: 0
+  carry_over_slots_to_new_session: true
 intents:
 - restart
 - barchart_bokeh_reco
@@ -88,9 +91,6 @@ intents:
 - stem_ner_dn
 - stem_word_reco
 - stem_sentence_reco
-- Piechart_code_reco
-- Piechart_reco
-- Piechart_seaborn_reco
 entities:
 - eid
 - answer_1
@@ -131,18 +131,18 @@ slots:
     auto_fill: false
   requested_slot:
     type: unfeaturized
-templates:
+responses:
   utter_ask_eid:
   - text: Please provide your email-id
   utter_ask_answer_1:
   - text: '{question} Here are the options: a.{option_1} b.{option_2}'
   utter_ask_answer_2:
-  - text: Do you want to take more questions?
-    buttons:
-    - title: Continue
-      payload: '/inform{"answer_2": "value"}'
-    - title: Exit
-      payload: /restart
+  - buttons:
+    - payload: '/inform{"answer_2": "value"}'
+      title: Continue
+    - payload: /restart
+      title: Exit
+    text: Do you want to take more questions?
   utter_ask_answer_3:
   - text: If there is a 90% chance that you will win a lottery of $1000 and a 10%
       chance that you will lose $500, what is your total expected reward?
@@ -159,55 +159,48 @@ templates:
   utter_ask_continue:
   - text: do you want to continue?
   utter_default:
-  - text: Apologies. My capabilities are still evolving. Can you try again? You can
+  - buttons:
+    - payload: /restart
+      title: Restart the conversation
+    text: Apologies. My capabilities are still evolving. Can you try again? You can
       also choose to restart the conversation.
-    buttons:
-    - title: Restart the conversation
-      payload: /restart
   utter_greet:
-  - text: 'Hello! I am Gideon. I can help you master the world of Data Science. '
-    buttons:
-    - title: Code Recommendations
-      payload: /code_reco
-    - title: Prepare for interview
-      payload: /request_interview
+  - buttons:
+    - payload: /code_reco
+      title: Code Recommendations
+    - payload: /request_interview
+      title: Prepare for interview
+    text: 'Hello! I am Gideon. I can help you master the world of Data Science. '
   utter_iamabot:
   - text: I am a bot, powered by Rasa.
-  utter_restart:
-  - text: 'Hello! I am Gideon. I can help you master the world of Data Science. '
-    buttons:
-    - title: Code Recommendations
-      payload: /code_reco
-    - title: Prepare for interview
-      payload: /request_interview
   utter_bye:
   - text: Great interviewing you. Return soon!
   utter_ask_code:
-  - text: Which of the below problems suit your requirement?
-    buttons:
-    - title: Class Imbalance
-      payload: /imbalance_reco
-    - title: Missing Values
-      payload: /missing_values
-    - title: Outlier Detection
-      payload: /outlier_reco
-    - title: Removing Duplicates
-      payload: /duplicate_reco
-    - title: Encoding Categorical Variables
-      payload: /encoding_reco
-    - title: Generate a Word Cloud
-      payload: /wordcloud_reco
-    - title: Data Visulization
-      payload: /data_visualization_reco
+  - buttons:
+    - payload: /imbalance_reco
+      title: Class Imbalance
+    - payload: /missing_values
+      title: Missing Values
+    - payload: /outlier_reco
+      title: Outlier Detection
+    - payload: /duplicate_reco
+      title: Removing Duplicates
+    - payload: /encoding_reco
+      title: Encoding Categorical Variables
+    - payload: /wordcloud_reco
+      title: Generate a Word Cloud
+    - payload: /data_visualization_reco
+      title: Data Visulization
+    text: Choose from below problems or else type any personalized question?
   utter_missing_values:
-  - text: Here are some ways. Choose an option to see the code.
-    buttons:
-    - title: Dropping Null Values
-      payload: /null_reco
-    - title: Imputing Null Values
-      payload: /impute_reco
-    - title: Replacing with KNN
-      payload: /knn_reco
+  - buttons:
+    - payload: /null_reco
+      title: Dropping Null Values
+    - payload: /impute_reco
+      title: Imputing Null Values
+    - payload: /knn_reco
+      title: Replacing with KNN
+    text: Here are some ways. Choose an option to see the code.
   utter_knn:
   - text: "You can replace missing values in a row with values of a similar row in\
       \ the dataset. The similarity between the rows is calculated using the KNN Algorithm.Here\
@@ -215,14 +208,14 @@ templates:
       \ [3, 4, 3], [np.nan, 6, 5], [8, 8, 7]]\n imputer = KNNImputer(n_neighbors=2)\n\
       \ imputer.fit_transform(X)"
   utter_imbalance:
-  - text: Here are some ways. Choose an option to see the code.
-    buttons:
-    - title: Oversampling using SMOTE
-      payload: /smote_reco
-    - title: Cost function tuning
-      payload: /cost_reco
-    - title: Choose right metric
-      payload: /metric_reco
+  - buttons:
+    - payload: /smote_reco
+      title: Oversampling using SMOTE
+    - payload: /cost_reco
+      title: Cost function tuning
+    - payload: /metric_reco
+      title: Choose right metric
+    text: Here are some ways. Choose an option to see the code.
   utter_smote:
   - text: "SMOTE is a oversampling technique that augments the minority class samples\n\
       using KNN. Here is the code - \n\npip install imblearn\nfrom imblearn.over_sampling\
@@ -260,12 +253,12 @@ templates:
       boston_df_out = boston_df\\[~((boston_df < (Q1 - 1.5 * IQR)) | (boston_df >\
       \ (Q3 + 1.5 * IQR))).any(axis=1))] #contains data without outliers"
   utter_special:
-  - text: Here are some ways. Choose an option to see the code.
-    buttons:
-    - title: Remove HTML tags
-      payload: /html_reco
-    - title: Remove Punctuation
-      payload: /punctuation_reco
+  - buttons:
+    - payload: /html_reco
+      title: Remove HTML tags
+    - payload: /punctuation_reco
+      title: Remove Punctuation
+    text: Here are some ways. Choose an option to see the code.
   utter_html:
   - text: "Here are two approaches to remove HTML code.\nApproach 1: \nimport re\n\
       text=\"<html> Hello </html>\"\nclean = re.compile('<.*?>')\nclean_text= re.sub(clean,\
@@ -316,28 +309,28 @@ templates:
       \ is a categorical variable\n df.loc[:,'Temp_mean_encode'] = df['Temperature'].map(fe)\n\
       \ #Temp_mean_encode is the new encoded variable"
   utter_encode:
-  - text: 'Do you want to perform encoding with respect to the target variable? '
-    buttons:
-    - title: Yes
-      payload: /target_reco
-    - title: No
-      payload: /categorical_reco
+  - buttons:
+    - payload: /target_reco
+      title: Yes
+    - payload: /categorical_reco
+      title: No
+    text: 'Do you want to perform encoding with respect to the target variable? '
   utter_categorical_reco:
-  - text: 'Are your Categorical variables ordered or unordered? '
-    buttons:
-    - title: Ordered
-      payload: /categorical_reco
-    - title: Unordered
-      payload: /onehot_reco
+  - buttons:
+    - payload: /categorical_reco
+      title: Ordered
+    - payload: /onehot_reco
+      title: Unordered
+    text: 'Are your Categorical variables ordered or unordered? '
   utter_categorical_question:
-  - text: Do you have a lot of categories (>10)?
-    buttons:
-    - title: Yes
-      payload: /binary_reco
-    - title: No
-      payload: /label_reco
+  - buttons:
+    - payload: /binary_reco
+      title: Yes
+    - payload: /label_reco
+      title: No
+    text: Do you have a lot of categories (>10)?
   utter_wordcloud:
-  - text: "Here is the code to generate a Word Cloud\n\nfrom wordcloud import WordCloud,\
+  - text: "Here is the code to generate a Word Cloud\n\n from wordcloud import WordCloud,\
       \ STOPWORDS\nimport matplotlib.pyplot as plt\ntext = neg\\['verified_reviews'].values\n\
       wordcloud = WordCloud(\n  width = 3000,\n  height = 2000,\n  background_color\
       \ = 'black',\n  stopwords = STOPWORDS).generate(str(text))\nfig = plt.figure(\n\
@@ -350,44 +343,44 @@ templates:
       \ To remove single stop word   ==> STOP_WORDS.remove('Test')\n2. To remove Multiple\
       \ stop word ==> STOP_WORDS -= {\"Token1\",\"Token2\"}"
   utter_ask_code1:
-  - text: Which python library you want to use for linechart?
-    buttons:
-    - title: Matplotlib
-      payload: /linechart_matplotlib_reco
-    - title: Seaborn
-      payload: /linechart_seaborn_reco
-    - title: Plotly
-      payload: /linechart_plotly_reco
-    - title: Bokeh
-      payload: /linechart_bokeh_reco
-    - title: Ggplot
-      payload: /linechart_ggplot_reco
+  - buttons:
+    - payload: /linechart_matplotlib_reco
+      title: Matplotlib
+    - payload: /linechart_seaborn_reco
+      title: Seaborn
+    - payload: /linechart_plotly_reco
+      title: Plotly
+    - payload: /linechart_bokeh_reco
+      title: Bokeh
+    - payload: /linechart_ggplot_reco
+      title: Ggplot
+    text: Which python library you want to use for linechart?
   utter_ask_code2:
-  - text: Which python library you want to use for barchart?
-    buttons:
-    - title: Matplotlib
-      payload: /barchart_matplotlib_reco
-    - title: Seaborn
-      payload: /barchart_seaborn_reco
-    - title: Plotly
-      payload: /barchart_plotly_reco
-    - title: Bokeh
-      payload: /barchart_bokeh_reco
-    - title: Ggplot
-      payload: /barchart_ggplot_reco
+  - buttons:
+    - payload: /barchart_matplotlib_reco
+      title: Matplotlib
+    - payload: /barchart_seaborn_reco
+      title: Seaborn
+    - payload: /barchart_plotly_reco
+      title: Plotly
+    - payload: /barchart_bokeh_reco
+      title: Bokeh
+    - payload: /barchart_ggplot_reco
+      title: Ggplot
+    text: Which python library you want to use for barchart?
   utter_ask_code3:
-  - text: Which python library you want to use for histogram?
-    buttons:
-    - title: Matplotlib
-      payload: /histogram_matplotlib_reco
-    - title: Seaborn
-      payload: /histogram_seaborn_reco
-    - title: Plotly
-      payload: /histogram_plotly_reco
-    - title: Bokeh
-      payload: /histogram_bokeh_reco
-    - title: Ggplot
-      payload: /histogram_ggplot_reco
+  - buttons:
+    - payload: /histogram_matplotlib_reco
+      title: Matplotlib
+    - payload: /histogram_seaborn_reco
+      title: Seaborn
+    - payload: /histogram_plotly_reco
+      title: Plotly
+    - payload: /histogram_bokeh_reco
+      title: Bokeh
+    - payload: /histogram_ggplot_reco
+      title: Ggplot
+    text: Which python library you want to use for histogram?
   utter_barchart:
   - text: "A Bar chart or graph is a data visualization technique where each category\
       \ is\nrepresented by a rectangle. The height of the rectangle is in the propotion\
@@ -484,16 +477,16 @@ templates:
       \ \\# same technique and properties for every Bokeh Glyph\n      line_color=\"\
       red\", line_width=2)\noutput_file(\"hist.html\")\nshow(p)"
   utter_model_explain:
-  - text: The process of evaluating the model in terms of its usability. The process
+  - buttons:
+    - payload: /lime
+      title: Lime
+    - payload: /shap
+      title: Shap
+    - payload: /eli5
+      title: Eli5
+    text: The process of evaluating the model in terms of its usability. The process
       involves various method to explain the usability of model using different Sample
       . Below three Algorithums can be handy in doing explaining the Model in detail.
-    buttons:
-    - title: Lime
-      payload: /lime
-    - title: Shap
-      payload: /shap
-    - title: Eli5
-      payload: /eli5
   utter_shap:
   - text: "SHAP (SHapley Additive exPlanations) is a game theoretic approach to explain\
       \ the output of any machine learning model. \n   import shap\n   explainer =\
@@ -538,8 +531,7 @@ templates:
       1.6.0 at &lt;url&gt;:6006 (Press CTRL+C to quit) 7.Enter the <url>:6006 in to
       the web browser You should be able to see a orange dashboard at this point.
   utter_optimizer:
-  - text: Choose an optimizer
-    buttons:
+  - buttons:
     - payload: utter_bgd
       title: Batch gradient descent
     - payload: utter_sgd
@@ -556,6 +548,7 @@ templates:
       title: RMSProp
     - payload: utter_adam
       title: Adam
+    text: Choose an optimizer
   utter_bgd:
   - text: 'Batch Gradient Descent calculates the gradient after a subset of samples
       have been processed in the dataset.Default value for batch_size is 32 samples.  Here
@@ -594,13 +587,13 @@ templates:
       \ on adaptive estimation of first-order and second-order moments.Best optimizer\
       \ out there.\n Here is the code:\ntf.keras.optimizers.Adam(learning_rate=0.01)"
   utter_cod:
-  - text: Choose LDA if you are trying to reduce dimensions with respect to target
+  - buttons:
+    - payload: /pca_reco
+      title: PCA
+    - payload: /lda_reco
+      title: LDA
+    text: Choose LDA if you are trying to reduce dimensions with respect to target
       variable. If not, choose PCA.
-    buttons:
-    - title: PCA
-      payload: /pca_reco
-    - title: LDA
-      payload: /lda_reco
   utter_lda:
   - text: "Here is the code for LDA:  from sklearn.discriminant_analysis \n   import\
       \ LinearDiscriminantAnalysis as LDA\n   model = LDA(n_components=3)\n   X_lda\
@@ -613,28 +606,28 @@ templates:
       variance_ratio_cum_sum=np.cumsum(np.round(pca.explained_variance_ratio_, decimals=4)*100)\n\
       plt.plot(variance_ratio)"
   utter_ner_dn:
-  - text: Named Entity Recognition is a process where an algorthm takes a string as
-      input and indentifies relevant nouns like people, places, organization
-    buttons:
+  - buttons:
     - payload: utter_ner
       title: Named Entity Recognition
     - payload: utter_cner
       title: Custom Named Entity Recogition
+    text: Named Entity Recognition is a process where an algorthm takes a string as
+      input and indentifies relevant nouns like people, places, organization
   utter_ner:
   - text: "Here is the code:   \ndoc1 = nlp('John lives in New York, where is Mr.Abhishek\
       \ its already 11PM, he likes burger so he went to KFC')  \nfor i in doc1.ents:\n\
       \    print(i.text,'-',i.label_)"
   utter_cner:
-  - text: Here is the code
-    image: https://img1.niftyimages.com/tm1/pkio/58bo?txt=FIRSTNAME
+  - image: https://img1.niftyimages.com/tm1/pkio/58bo?txt=FIRSTNAME
+    text: Here is the code
   utter_stem:
-  - text: Stemming is the process of removing the suffix from a word and reduce it
+  - buttons:
+    - payload: /stem_word_reco
+      title: Stemming words
+    - payload: /stem_sentence_reco
+      title: Stemming sentences
+    text: Stemming is the process of removing the suffix from a word and reduce it
       to its root word
-    buttons:
-    - title: Stemming words
-      payload: /stem_word_reco
-    - title: Stemming sentences
-      payload: /stem_sentence_reco
   utter_stem_word:
   - text: "\nStep1 : Define the stemmer  from nltk.stem import PorterStemmer from\
       \ nltk.tokenize import word_tokenize        stemmer = PorterStemmer() \nStep2\
@@ -647,33 +640,33 @@ templates:
       \ addressed to him\"     tokenized = word_tokenize(text)\\ for words in tokenized:\
       \                               print(stemmer.stem(words))\n\n  "
   utter_continue:
-  - text: Do you want to explore more recommendations?
-    buttons:
-    - title: Continue
-      payload: /code_reco
-    - title: I am good
-      payload: /restart
-  utter_piechart:
-  - text: "Pie Chart is a type of graph in which a circle is divided into sectors\
-      \ that each represent a proportion of the whole.  \n\nPie chart generally is\
-      \ used to show  propotional data for each category. It is usually good for displaying\
-      \ data for around 6 categories of fewer."
-  utter_piechart_matplotlib:
-  - text: "Here is the sample code:\n\nfrom matplotlib import pyplot as plt\nimport\
-      \ numpy as np\nfig = plt.figure()\nax = fig.add_axes([0,0,1,1])\nax.axis('equal')\n\
-      langs = \\['C', 'C++', 'Java', 'Python', 'PHP']\nstudents = \\[23,17,35,29,12]\n\
-      ax.pie(students, labels = langs,autopct='%1.2f%%')\nplt.show()"
-  utter_piechart_bokeh:
-  - text: "Here is the sample code:\nfrom math import pi\nimport pandas as pd\nfrom\
-      \ bokeh.io import output_file, show\nfrom bokeh.palettes import Category20c\n\
-      from bokeh.plotting import figure\nfrom bokeh.transform import cumsum"
-  utter_piechart_plotly:
-  - text: "Here is the sample code:\n\nimport plotly\nplotly.tools.set_credentials_file(\n\
-      \  username = 'lathkar', api_key = 'U7vgRe1hqmRp4ZNf4PTN'\n)\nfrom plotly.offline\
-      \ import iplot, init_notebook_mode\ninit_notebook_mode(connected = True)\nimport\
-      \ plotly.graph_objs as go\nlangs = \\['C', 'C++', 'Java', 'Python', 'PHP']\n\
-      students = \\[23,17,35,29,12]\ntrace = go.Pie(labels = langs, values = students)\n\
-      data = \\[trace]\nfig = go.Figure(data = data)\niplot(fig)"
+  - buttons:
+    - payload: /code_reco
+      title: Continue
+    - payload: /restart
+      title: I am good
+    text: Do you want to explore more recommendations?
+  utter_continue_imbalance:
+  - buttons:
+    - payload: /imbalance_reco
+      title: Continue
+    - payload: /code_reco
+      title: I am good
+    text: Do you want to explore "Class Imbalance" more?
+  utter_missing_values_continue:
+  - buttons:
+    - payload: /missing_values
+      title: Continue
+    - payload: /code_reco
+      title: I am good
+    text: Do you want to explore "Missing Values" more?
+  utter_encoding_categorical_variables:
+  - buttons:
+    - payload: /encoding_reco
+      title: Continue
+    - payload: /code_reco
+      title: I am good
+    text: Do you want to explore "Encoding Categorical Variables" more?
 actions:
 - action_chat_restart
 - utter_slots_values
@@ -771,12 +764,9 @@ actions:
 - utter_stem_word
 - utter_stem_sentence
 - utter_continue
-- utter_piechart_seaborn
-- utter_piechart
-- utter_ask_code4
-- utter_piechart_matplotlib
-- utter_piechart_bokeh
-- utter_piechart_ploty
-- utter_piechart_plotly
+- utter_ask_answer_3
+- utter_continue_imbalance
+- utter_missing_values_continue
+- utter_encoding_categorical_variables
 forms:
 - interview_form
