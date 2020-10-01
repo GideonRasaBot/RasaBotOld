@@ -218,8 +218,142 @@
     - slot{"requested_slot":null}
     - utter_slots_values
 
-## Code Reco1
 
+
+
+
+
+
+
+## Code Reco1.1
+* greet
+    - utter_greet
+* code_reco
+    - utter_ask_code
+* imbalance_reco
+    - utter_imbalance
+* smote_reco
+    - utter_smote
+    - utter_continue_imbalance
+* imbalance_reco
+    - utter_imbalance
+    
+## Code Reco1.1.1
+* greet
+    - utter_greet
+* code_reco
+    - utter_ask_code
+* imbalance_reco
+    - utter_imbalance
+* smote_reco
+    - utter_smote
+    - utter_continue_imbalance
+* code_reco
+    - utter_ask_code
+    
+## Code Reco1.2
+* greet
+    - utter_greet
+* code_reco
+    - utter_ask_code
+* imbalance_reco
+    - utter_imbalance
+* cost_reco
+    - utter_cost
+    - utter_continue_imbalance
+* imbalance_reco
+    - utter_imbalance
+    
+## Code Reco1.2.1
+* greet
+    - utter_greet
+* code_reco
+    - utter_ask_code
+* imbalance_reco
+    - utter_imbalance
+* cost_reco
+    - utter_cost
+    - utter_continue_imbalance
+* code_reco
+    - utter_ask_code
+    
+## Code Reco1.3
+* greet
+    - utter_greet
+* code_reco
+    - utter_ask_code
+* imbalance_reco
+    - utter_imbalance
+* metric_reco
+    - utter_metric
+    - utter_continue_imbalance
+* imbalance_reco
+    - utter_imbalance
+    
+## Code Reco1.3.1
+* greet
+    - utter_greet
+* code_reco
+    - utter_ask_code
+* imbalance_reco
+    - utter_imbalance
+* metric_reco
+    - utter_metric
+    - utter_continue_imbalance
+* code_reco
+    - utter_ask_code
+
+## Code Reco2.1
+* greet
+    - utter_greet
+* code_reco
+    - utter_ask_code
+* missing_values
+    - utter_missing_values
+* null_reco
+    - utter_null
+    - utter_missing_values_continue
+* missing_values
+    - utter_missing_values
+## Code Reco2.1.1
+* greet
+    - utter_greet
+* code_reco
+    - utter_ask_code
+* missing_values
+    - utter_missing_values
+* null_reco
+    - utter_null
+    - utter_missing_values_continue
+* code_reco
+    - utter_ask_code
+
+## Code Reco2.2
+* greet
+    - utter_greet
+* code_reco
+    - utter_ask_code
+* missing_values
+    - utter_missing_values
+* impute_reco
+    - utter_impute
+    - utter_missing_values_continue
+* missing_values
+    - utter_missing_values
+## Code Reco2.2.1
+* greet
+    - utter_greet
+* code_reco
+    - utter_ask_code
+* missing_values
+    - utter_missing_values
+* impute_reco
+    - utter_impute
+    - utter_missing_values_continue
+* code_reco
+    - utter_ask_code
+
+## Code Reco2.3
 * greet
     - utter_greet
 * code_reco
@@ -228,25 +362,176 @@
     - utter_missing_values
 * knn_reco
     - utter_knn
-> checkpoint_another_reco
-
-## Code Reco2
-
+    - utter_missing_values_continue
+* missing_values
+    - utter_missing_values
+## Code Reco2.3.1
 * greet
     - utter_greet
 * code_reco
     - utter_ask_code
-
-* imbalance_reco
-    - utter_imbalance
-* smote_reco
-    - utter_smote
-    - action_restart
-* restart
+* missing_values
+    - utter_missing_values
+* knn_reco
+    - utter_knn
+    - utter_missing_values_continue
+* code_reco
+    - utter_ask_code
+    
+## Code Reco3
+* greet
+    - utter_greet
+* code_reco
+    - utter_ask_code
+* outlier_reco
+    - utter_outliers
+    - utter_ask_code
+    
+## Code Reco4
+* greet
+    - utter_greet
+* code_reco
+    - utter_ask_code
+* duplicate_reco
+    - utter_duplicate
     - utter_ask_code
 
-## Story from conversation with 89aee8f733104e55b23fc0e5d91cea56 on July 27th 2020
+## Code Reco5.1
+* greet
+    - utter_greet
+* code_reco
+    - utter_ask_code
+* encoding_reco
+    - utter_encode
+* target_reco
+    - utter_frequency
+    - utter_meanencoder
+    - utter_encoding_categorical_variables
+* encoding_reco
+    - utter_encode
+## Code Reco5.1.1
+* greet
+    - utter_greet
+* code_reco
+    - utter_ask_code
+* encoding_reco
+    - utter_encode
+* target_reco
+    - utter_frequency
+    - utter_meanencoder
+    - utter_encoding_categorical_variables
+* code_reco
+    - utter_ask_code
 
+## Code Reco5.2
+* greet
+    - utter_greet
+* code_reco
+    - utter_ask_code
+* encoding_reco
+    - utter_encode
+* categorical_reco
+    - utter_categorical_reco
+* categorical_reco
+    - utter_categorical_question
+* binary_reco
+    - utter_binary
+    - utter_encoding_categorical_variables
+* encoding_reco
+    - utter_encode
+## Code Reco5.2.1
+* greet
+    - utter_greet
+* code_reco
+    - utter_ask_code
+* encoding_reco
+    - utter_encode
+* categorical_reco
+    - utter_categorical_reco
+* categorical_reco
+    - utter_categorical_question
+* binary_reco
+    - utter_binary
+    - utter_encoding_categorical_variables
+* code_reco
+    - utter_ask_code
+    
+## Code Reco5.3
+* greet
+    - utter_greet
+* code_reco
+    - utter_ask_code
+* encoding_reco
+    - utter_encode
+* categorical_reco
+    - utter_categorical_reco
+* categorical_reco
+    - utter_categorical_question
+* label_reco
+    - utter_label
+    - utter_encoding_categorical_variables
+* encoding_reco
+    - utter_encode
+## Code Reco5.3.1
+* greet
+    - utter_greet
+* code_reco
+    - utter_ask_code
+* encoding_reco
+    - utter_encode
+* categorical_reco
+    - utter_categorical_reco
+* categorical_reco
+    - utter_categorical_question
+* label_reco
+    - utter_label
+    - utter_encoding_categorical_variables
+* code_reco
+    - utter_ask_code
+
+## Code Reco5.4
+* greet
+    - utter_greet
+* code_reco
+    - utter_ask_code
+* encoding_reco
+    - utter_encode
+* categorical_reco
+    - utter_categorical_reco
+* onehot_reco
+    - utter_onehot
+    - utter_encoding_categorical_variables
+* encoding_reco
+    - utter_encode
+## Code Reco5.4.1
+* greet
+    - utter_greet
+* code_reco
+    - utter_ask_code
+* encoding_reco
+    - utter_encode
+* categorical_reco
+    - utter_categorical_reco
+* onehot_reco
+    - utter_onehot
+    - utter_encoding_categorical_variables
+* code_reco
+    - utter_ask_code
+
+## Code Reco6
+* greet
+    - utter_greet
+* code_reco
+    - utter_ask_code
+* wordcloud_reco
+    - utter_wordcloud
+    - utter_ask_code
+    
+
+
+
+    
+## Story from conversation with 89aee8f733104e55b23fc0e5d91cea56 on July 27th 2020
 * greet
     - utter_greet
 * code_reco
@@ -255,43 +540,6 @@
     - utter_imbalance
 * smote_reco
     - utter_smote
-
-## Code Reco1.1
-
-* code_reco
-    - utter_ask_code
-* missing_values
-    - utter_missing_values
-* null_reco
-    - utter_null
-> checkpoint_another_reco
-* restart
-    - utter_ask_code
-
-## Code Reco1.2
-
-* code_reco
-    - utter_ask_code
-* missing_values
-    - utter_missing_values
-* impute_reco
-    - utter_impute
-    - action_restart
-* restart
-    - utter_ask_code
-
-### Outlier Story
-
-* greet
-    - utter_greet
-* code_reco
-    - utter_ask_code
-> checkpoint_another_reco
-* outlier_reco
-    - utter_outliers
-    - utter_continue
-* restart
-    - utter_ask_code
 
 ## Punctuation Story
 * greet
@@ -319,22 +567,7 @@
 * restart
     - utter_ask_code
 
-## Code Reco KNN
 
-* greet
-    - utter_greet
-* code_reco
-    - utter_ask_code
-* imbalance_reco
-    - utter_imbalance
-* smote_reco
-    - utter_smote
-* knn_reco
-    - utter_tutorial
-    - utter_knn_tutorial
-    - utter_continue
-* restart
-    - utter_ask_code
 
 ## Story from conversation with U0182JCBDM0 on July 31st 2020
 * greet
@@ -385,95 +618,6 @@
 * restart
     - utter_ask_code
 
-## Encoding Story 1
-* greet
-    - utter_greet
-* code_reco
-    - utter_ask_code
-* encoding_reco
-    - utter_encode
-* target_reco
-    - utter_frequency
-    - utter_meanencoder
-    - utter_continue
-* restart
-    - utter_ask_code
-
-## Encoding Story 2
-* greet
-    - utter_greet
-* code_reco
-    - utter_ask_code
-* encoding_reco
-    - utter_encode
-* categorical_reco
-    - utter_categorical_reco
-* onehot_reco
-    - utter_onehot
-    - utter_continue
-* restart
-    - utter_ask_code
-
-## Encoding Story 3
-* greet
-    - utter_greet
-* code_reco
-    - utter_ask_code
-* encoding_reco
-    - utter_encode
-* categorical_reco
-    - utter_categorical_reco
-* categorical_reco
-    - utter_categorical_question
-* binary_reco
-    - utter_binary
-    - utter_continue
-* restart
-    - utter_ask_code
-
-## Encoding Story 4
-* greet
-    - utter_greet
-* code_reco
-    - utter_ask_code
-* encoding_reco
-    - utter_encode
-* categorical_reco
-    - utter_categorical_reco
-* categorical_reco
-    - utter_categorical_question
-* label_reco
-    - utter_label
-    - utter_continue
-* restart
-    - utter_ask_code
-
-## New Story
-
-* greet
-    - utter_greet
-* code_reco
-    - utter_ask_code
-* encoding_reco
-    - utter_encode
-* categorical_reco
-    - utter_categorical_reco
-* categorical_reco
-    - utter_categorical_question
-* label_reco
-    - utter_label
-    - utter_continue
-* restart
-    - utter_ask_code
-
-## WordCloud Story
-> checkpoint_another_reco
-* wordcloud_reco
-    - utter_wordcloud
-    - utter_continue
-* restart
-    - utter_ask_code
-
 ## Stopwordaddremoval Story
 
 * greet
@@ -485,17 +629,7 @@
 * thankyou
     - utter_noworries
 
-## Encoding Story 5
 
-* greet
-    - utter_greet
-* code_reco
-    - utter_ask_code
-* encoding_reco
-    - utter_encode
-* target_reco
-    - utter_frequency
-    - utter_meanencoder
 
 ## New Story
 
@@ -559,7 +693,7 @@
 * data_visualization_reco
     - utter_data_visualization
 * linechart_reco{"answer_1":"Linechart"}
-    - utter_linechart
+    - utter_barchart
 * linechart_code_reco{"answer_1":"Code for Linechart"}
     - utter_ask_code1
 * linechart_matplotlib_reco
@@ -576,7 +710,7 @@
 * data_visualization_reco
     - utter_data_visualization
 * linechart_reco{"answer_1":"Linechart"}
-    - utter_linechart
+    - utter_barchart
 * linechart_code_reco{"answer_1":"Code for Linechart"}
     - utter_ask_code1
 * linechart_seaborn_reco
@@ -593,7 +727,7 @@
 * data_visualization_reco
     - utter_data_visualization
 * linechart_reco{"answer_1":"Linechart"}
-    - utter_linechart
+    - utter_barchart
 * linechart_code_reco{"answer_1":"Code for Linechart"}
     - utter_ask_code1
 * linechart_bokeh_reco
@@ -610,7 +744,7 @@
 * data_visualization_reco
     - utter_data_visualization
 * linechart_reco{"answer_1":"Linechart"}
-    - utter_linechart
+    - utter_barchart
 * linechart_code_reco{"answer_1":"Code for Linechart"}
     - utter_ask_code1
 * linechart_plotly_reco
@@ -627,7 +761,7 @@
 * data_visualization_reco
     - utter_data_visualization
 * linechart_reco{"answer_1":"Linechart"}
-    - utter_linechart
+    - utter_barchart
 * linechart_code_reco{"answer_1":"Code for Linechart"}
     - utter_ask_code1
 * linechart_ggplot_reco
@@ -729,7 +863,7 @@
 * data_visualization_reco
     - utter_data_visualization
 * histogram_reco{"answer_1":"Histogram"}
-    - utter_histogram
+    - utter_barchart
 * histogram_code_reco{"answer_1":"Code for Histogram"}
     - utter_ask_code3
 * histogram_seabron_reco
@@ -746,7 +880,7 @@
 * data_visualization_reco
     - utter_data_visualization
 * histogram_reco{"answer_1":"Histogram"}
-    - utter_histogram
+    - utter_barchart
 * histogram_code_reco{"answer_1":"Code for Histogram"}
     - utter_ask_code3
 * histogram_ggplot_reco
@@ -763,7 +897,7 @@
 * data_visualization_reco
     - utter_data_visualization
 * histogram_reco{"answer_1":"Histogram"}
-    - utter_histogram
+    - utter_barchart
 * histogram_code_reco{"answer_1":"Code for Histogram"}
     - utter_ask_code3
 * histogram_bokeh_reco
@@ -780,7 +914,7 @@
 * data_visualization_reco
     - utter_data_visualization
 * histogram_reco{"answer_1":"Histogram"}
-    - utter_histogram
+    - utter_barchart
 * histogram_code_reco{"answer_1":"Code for Histogram"}
     - utter_ask_code3
 * histogram_matplotlib_reco
@@ -797,7 +931,7 @@
 * data_visualization_reco
     - utter_data_visualization
 * histogram_reco{"answer_1":"Histogram"}
-    - utter_histogram
+    - utter_barchart
 * histogram_code_reco{"answer_1":"Code for Histogram"}
     - utter_ask_code3
 * histogram_plotly_reco
@@ -937,7 +1071,10 @@
     - utter_adam
 
 ## Curse of Dimensionality Story
-> checkpoint_another_reco
+* greet
+    - utter_greet
+* code_reco
+    - utter_ask_code
 * curse_of_dimensionality_reco
     - utter_cod
 * pca_reco
@@ -974,184 +1111,31 @@
     - utter_cner
 
 ## Stemming word Story
-> checkpoint_another_reco
+* greet
+    - utter_greet
+* code_reco
+    - utter_ask_code
 * stem_reco
     - utter_stem
 * stem_word_reco
     - utter_stem_word
 
 ## Stemming sentence Story
-> checkpoint_another_reco
+* greet
+    - utter_greet
+* code_reco
+    - utter_ask_code
 * stem_reco
     - utter_stem
 * stem_sentence_reco
     - utter_stem_sentence
 
-## Code Reco1 Duplicate
 
-* code_reco
-    - utter_ask_code
-* missing_values
-    - utter_missing_values
-* knn_reco
-    - utter_knn
-    - action_restart
-* restart
-    - utter_ask_code
 
-## Code Reco2 Duplicate
 
-* code_reco
-    - utter_ask_code
-* imbalance_reco
-    - utter_imbalance
-* smote_reco
-    - utter_smote
-    - action_restart
-* restart
-    - utter_ask_code
 
-## Code Reco1 Duplicate
 
-* code_reco
-    - utter_ask_code
-* missing_values
-    - utter_missing_values
-* knn_reco
-    - utter_knn
-    - action_restart
-* restart
-    - utter_ask_code
 
-## Code Reco2 Duplicate
 
-* code_reco
-    - utter_ask_code
-* imbalance_reco
-    - utter_imbalance
-* smote_reco
-    - utter_smote
-    - action_restart
-* restart
-    - utter_ask_code
 
-## Wordcloud Story
-> checkpoint_another_reco
-* wordcloud_reco
-    - utter_wordcloud
 
-## New Story training Outlier Word Cloud
-
-* greet
-    - utter_greet
-* code_reco
-    - utter_ask_code
-* outlier_reco
-    - utter_outliers
-    - utter_continue
-* code_reco
-    - utter_ask_code
-* wordcloud_reco
-    - utter_wordcloud
-
-## Duplicate rows
-
-* greet
-    - utter_greet
-* code_reco
-    - utter_ask_code
-* duplicate_reco
-    - utter_duplicate
-
-## Cost Function
-
-* greet
-    - utter_greet
-* code_reco
-    - utter_ask_code
-* imbalance_reco
-    - utter_imbalance
-* cost_reco
-    - utter_cost
-
-## Imbalance and Outliers
-
-* greet
-    - utter_greet
-* code_reco
-    - utter_ask_code
-* encoding_reco
-    - utter_encode
-* categorical_reco
-    - utter_categorical_reco
-* categorical_reco
-    - utter_categorical_question
-* label_reco
-    - utter_label
-    - utter_continue
-* code_reco
-    - utter_ask_code
-* outlier_reco
-    - utter_outliers
-
-## WordCloud and Missing Values
-
-* code_reco
-    - utter_ask_code
-* wordcloud_reco
-    - utter_wordcloud
-* missing_values
-    - utter_missing_values
-* impute_reco
-    - utter_impute
-
-## Pie chart using Bokeh
-
-* greet
-    - utter_greet
-* code_reco
-    - utter_ask_code
-* data_visualization_reco
-    - utter_data_visualization
-* Piechart_reco{"answer_1":"Piechart"}
-    - utter_piechart
-* Piechart_code_reco{"answer_1":"Code for Piechart"}
-    - utter_ask_code4
-* Piechart_seaborn_reco
-    - utter_piechart_bokeh   
-* thankyou
-    - utter_noworries
-
-## Pie chart using Matplotlib
-
-* greet
-    - utter_greet
-* code_reco
-    - utter_ask_code
-* data_visualization_reco
-    - utter_data_visualization
-* Piechart_reco{"answer_1":"Piechart"}
-    - utter_piechart
-* Piechart_code_reco{"answer_1":"Code for Piechart"}
-    - utter_ask_code4
-* Piechart_seaborn_reco
-    - utter_piechart_matplotlib   
-* thankyou
-    - utter_noworries
-
-## Pie chart using Plotly
-
-* greet
-    - utter_greet
-* code_reco
-    - utter_ask_code
-* data_visualization_reco
-    - utter_data_visualization
-* Piechart_reco{"answer_1":"Piechart"}
-    - utter_piechart
-* Piechart_code_reco{"answer_1":"Code for Piechart"}
-    - utter_ask_code4
-* Piechart_seaborn_reco
-    - utter_piechart_plotly  
-* thankyou
-    - utter_noworries
