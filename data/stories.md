@@ -218,6 +218,13 @@
     - slot{"requested_slot":null}
     - utter_slots_values
 
+
+
+
+
+
+
+
 ## Code Reco1.1
 * greet
     - utter_greet
@@ -230,7 +237,7 @@
     - utter_continue_imbalance
 * imbalance_reco
     - utter_imbalance
-
+    
 ## Code Reco1.1.1
 * greet
     - utter_greet
@@ -243,7 +250,7 @@
     - utter_continue_imbalance
 * code_reco
     - utter_ask_code
-
+    
 ## Code Reco1.2
 * greet
     - utter_greet
@@ -256,7 +263,7 @@
     - utter_continue_imbalance
 * imbalance_reco
     - utter_imbalance
-
+    
 ## Code Reco1.2.1
 * greet
     - utter_greet
@@ -269,7 +276,7 @@
     - utter_continue_imbalance
 * code_reco
     - utter_ask_code
-
+    
 ## Code Reco1.3
 * greet
     - utter_greet
@@ -282,7 +289,7 @@
     - utter_continue_imbalance
 * imbalance_reco
     - utter_imbalance
-
+    
 ## Code Reco1.3.1
 * greet
     - utter_greet
@@ -308,7 +315,6 @@
     - utter_missing_values_continue
 * missing_values
     - utter_missing_values
-
 ## Code Reco2.1.1
 * greet
     - utter_greet
@@ -334,7 +340,6 @@
     - utter_missing_values_continue
 * missing_values
     - utter_missing_values
-
 ## Code Reco2.2.1
 * greet
     - utter_greet
@@ -360,7 +365,6 @@
     - utter_missing_values_continue
 * missing_values
     - utter_missing_values
-
 ## Code Reco2.3.1
 * greet
     - utter_greet
@@ -373,7 +377,7 @@
     - utter_missing_values_continue
 * code_reco
     - utter_ask_code
-
+    
 ## Code Reco3
 * greet
     - utter_greet
@@ -382,7 +386,7 @@
 * outlier_reco
     - utter_outliers
     - utter_ask_code
-
+    
 ## Code Reco4
 * greet
     - utter_greet
@@ -405,7 +409,6 @@
     - utter_encoding_categorical_variables
 * encoding_reco
     - utter_encode
-
 ## Code Reco5.1.1
 * greet
     - utter_greet
@@ -436,7 +439,6 @@
     - utter_encoding_categorical_variables
 * encoding_reco
     - utter_encode
-
 ## Code Reco5.2.1
 * greet
     - utter_greet
@@ -453,7 +455,7 @@
     - utter_encoding_categorical_variables
 * code_reco
     - utter_ask_code
-
+    
 ## Code Reco5.3
 * greet
     - utter_greet
@@ -470,7 +472,6 @@
     - utter_encoding_categorical_variables
 * encoding_reco
     - utter_encode
-
 ## Code Reco5.3.1
 * greet
     - utter_greet
@@ -502,7 +503,6 @@
     - utter_encoding_categorical_variables
 * encoding_reco
     - utter_encode
-
 ## Code Reco5.4.1
 * greet
     - utter_greet
@@ -526,7 +526,11 @@
 * wordcloud_reco
     - utter_wordcloud
     - utter_ask_code
+    
 
+
+
+    
 ## Story from conversation with 89aee8f733104e55b23fc0e5d91cea56 on July 27th 2020
 * greet
     - utter_greet
@@ -562,6 +566,8 @@
     - utter_continue
 * restart
     - utter_ask_code
+
+
 
 ## Story from conversation with U0182JCBDM0 on July 31st 2020
 * greet
@@ -622,6 +628,8 @@
     - utter_stopwordaddremoval
 * thankyou
     - utter_noworries
+
+
 
 ## New Story
 
@@ -685,7 +693,7 @@
 * data_visualization_reco
     - utter_data_visualization
 * linechart_reco{"answer_1":"Linechart"}
-    - utter_linechart
+    - utter_barchart
 * linechart_code_reco{"answer_1":"Code for Linechart"}
     - utter_ask_code1
 * linechart_matplotlib_reco
@@ -702,7 +710,7 @@
 * data_visualization_reco
     - utter_data_visualization
 * linechart_reco{"answer_1":"Linechart"}
-    - utter_linechart
+    - utter_barchart
 * linechart_code_reco{"answer_1":"Code for Linechart"}
     - utter_ask_code1
 * linechart_seaborn_reco
@@ -719,7 +727,7 @@
 * data_visualization_reco
     - utter_data_visualization
 * linechart_reco{"answer_1":"Linechart"}
-    - utter_linechart
+    - utter_barchart
 * linechart_code_reco{"answer_1":"Code for Linechart"}
     - utter_ask_code1
 * linechart_bokeh_reco
@@ -736,7 +744,7 @@
 * data_visualization_reco
     - utter_data_visualization
 * linechart_reco{"answer_1":"Linechart"}
-    - utter_linechart
+    - utter_barchart
 * linechart_code_reco{"answer_1":"Code for Linechart"}
     - utter_ask_code1
 * linechart_plotly_reco
@@ -753,7 +761,7 @@
 * data_visualization_reco
     - utter_data_visualization
 * linechart_reco{"answer_1":"Linechart"}
-    - utter_linechart
+    - utter_barchart
 * linechart_code_reco{"answer_1":"Code for Linechart"}
     - utter_ask_code1
 * linechart_ggplot_reco
@@ -872,7 +880,7 @@
 * data_visualization_reco
     - utter_data_visualization
 * histogram_reco{"answer_1":"Histogram"}
-    - utter_histogram
+    - utter_barchart
 * histogram_code_reco{"answer_1":"Code for Histogram"}
     - utter_ask_code3
 * histogram_ggplot_reco
@@ -889,7 +897,7 @@
 * data_visualization_reco
     - utter_data_visualization
 * histogram_reco{"answer_1":"Histogram"}
-    - utter_histogram
+    - utter_barchart
 * histogram_code_reco{"answer_1":"Code for Histogram"}
     - utter_ask_code3
 * histogram_bokeh_reco
@@ -906,7 +914,7 @@
 * data_visualization_reco
     - utter_data_visualization
 * histogram_reco{"answer_1":"Histogram"}
-    - utter_histogram
+    - utter_barchart
 * histogram_code_reco{"answer_1":"Code for Histogram"}
     - utter_ask_code3
 * histogram_matplotlib_reco
@@ -923,7 +931,7 @@
 * data_visualization_reco
     - utter_data_visualization
 * histogram_reco{"answer_1":"Histogram"}
-    - utter_histogram
+    - utter_barchart
 * histogram_code_reco{"answer_1":"Code for Histogram"}
     - utter_ask_code3
 * histogram_plotly_reco
@@ -1122,36 +1130,12 @@
 * stem_sentence_reco
     - utter_stem_sentence
 
-## Pie chart using Matplotlib
 
-* greet
-    - utter_greet
-* code_reco
-    - utter_ask_code
-* data_visualization_reco
-    - utter_data_visualization
-* piechart_reco{"answer_1":"Piechart"}
-    - utter_piechart
-* piechart_code_reco{"answer_1":"Code for Piechart"}
-    - utter_ask_code4
-* piechart_matplotlib_reco
-    - utter_piechart_matplotlib    
-* thankyou
-    - utter_noworries
 
-## Pie chart using Plotly
 
-* greet
-    - utter_greet
-* code_reco
-    - utter_ask_code
-* data_visualization_reco
-    - utter_data_visualization
-* piechart_reco{"answer_1":"Piechart"}
-    - utter_piechart
-* piechart_code_reco{"answer_1":"Code for Piechart"}
-    - utter_ask_code4
-* piechart_plotly_reco
-    - utter_piechart_plotly   
-* thankyou
-    - utter_noworries
+
+
+
+
+
+
